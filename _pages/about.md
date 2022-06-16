@@ -2,23 +2,21 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: PhD student at UW-Madison. adila@wisc.edu.
 
 profile:
   align: right
   image: prof_pic.jpg
-  address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hello! I am currently a PhD student at UW-Madison Department of Computer Science, advised by [Professor Fred Sala](https://pages.cs.wisc.edu/~fredsala/). 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I am broadly interested in how to build efficient machine learning solutions that are robust and reliable. I am also interested in exploring the rationales behind machine learning failure modes (e.g., distribution shift, OOD detection, etc.)
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+During my master's at the University of Minnesota, I was fortunate to work with Professor [Ju Sun](https://sunju.org/) in developing a machine learning system for disease detection. I also worked closely with Professor [Dongyeop Kang](https://dykang.github.io/) in understanding OOD detection in NLP and with Professor [Shashi Shekhar](https://www-users.cse.umn.edu/~shekhar/) in anomaly detection in spatio-temporal data.
+
+Originally, I came from Indonesia (yes, I swim at sea a lot. no, this is not a stereotype) and finished my undergrad at NTU Singapore.
