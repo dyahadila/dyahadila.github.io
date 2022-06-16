@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: PhD student at UW-Madison Department of Computer Science. adila@wisc.edu.
+subtitle: UW-Madison CS Dept. adila@wisc.edu.
 
 profile:
   align: right
