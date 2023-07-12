@@ -15,7 +15,7 @@ social: true  # includes social icons at the bottom of the page
 
 Hello! I am currently a PhD student at UW-Madison, advised by [Fred Sala](https://pages.cs.wisc.edu/~fredsala/). 
 
-I am broadly interested in how to build efficient machine learning (ML) solutions that are robust and reliable. I am also interested in exploring the rationales behind ML failure modes (e.g., distribution shift, capturing long-term dependency structure, etc.)
+I am broadly interested in how to build efficient machine learning (ML) solutions that are robust and reliable. Recently, my focus has been on improving the reliability of large multi-modal (vision-language) model.
 
 During my master's at the University of Minnesota, I was fortunate to be advised by [Ju Sun](https://sunju.org/). I also worked closely with [Dongyeop Kang](https://dykang.github.io/) and with [Shashi Shekhar](https://www-users.cse.umn.edu/~shekhar/).
 
