@@ -1,7 +1,6 @@
 ---
 layout: post
-date: 2021-09-03 15:59:00-0400
+date: 2022-08-04 07:59:00-0400
 inline: true
 ---
-
-Joined UW-Madison as a PhD student :grin:
+[Liger](https://arxiv.org/pdf/2203.13270.pdf) won the Best Student Paper Runner-up at UAI '22! 
