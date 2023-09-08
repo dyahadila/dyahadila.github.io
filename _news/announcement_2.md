@@ -1,1 +1,1 @@
-Check out [Roboshot](https://dyahadila.github.io/assets/pdf/roboshot.pdf): our work on robustifying Foundation Models without *any* extra labels and finetuning!
+Check out [RoboShot](https://dyahadila.github.io/assets/pdf/roboshot.pdf): our work on robustifying Foundation Models without *any* extra labels and finetuning!
