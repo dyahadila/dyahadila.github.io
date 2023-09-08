@@ -2,7 +2,7 @@
 layout: page
 title: Personal
 permalink: /projects/
-description: I draw on my free tme.. check it out :)
+description: I draw on my free time.. check it out :)
 nav: true
 nav_order: 2
 display_categories: [work, fun]

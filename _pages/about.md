@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: UW-Madison CS Dept. adila@wisc.edu.
 
