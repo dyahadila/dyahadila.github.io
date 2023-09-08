@@ -6,7 +6,7 @@ description: I draw on my free tme.. check it out :)
 nav: true
 nav_order: 2
 display_categories: [work, fun]
-horizontal: true
+horizontal: false
 ---
 
 <!-- pages/projects.md -->
