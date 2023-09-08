@@ -18,3 +18,5 @@ Hello! I am a PhD student at UW-Madison, advised by [Fred Sala](https://pages.cs
 I'm interested in building machine learning (ML) solutions that are robust and reliable, especially in settings with limited labeled data. Recently, I've been focusing on robustifying foundation models (both multi-modal and language models). I have worked on weak supervision -- mainly in improving weak sources coverage and mitigating their biases; and also on OOD detection -- to understand the characteristics of OOD samples.
 
 Originally, I was from Indonesia and finished my undergrad at NTU Singapore. In my free time, I enjoy reading books (fantasy, thriller, non-fiction.. almost anything really!), pilates, and hiking.
+
+See my [CV](../assets/pdf/CV.pdf)
