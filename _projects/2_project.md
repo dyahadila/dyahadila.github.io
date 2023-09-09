@@ -2,7 +2,7 @@
 layout: page
 title: Pooja what is this behavior
 description: Artwork for a friend's bithday
-img: assets/img/Poo_Bday.png
+img: assets/img/Poo_Bday.jpeg
 importance: 1
 category: work
 ---
