@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2022-08-04 07:59:00-0400
+date: 2023-12-17 07:59:00-0400
 inline: true
 ---
-[Liger](https://arxiv.org/pdf/2203.13270.pdf) won the Best Student Paper Runner-up at UAI '22! 
+Presented [RoboShot](https://dyahadila.github.io/assets/pdf/roboshot.pdf), our work on robustifying Foundation Models without *any* extra labels and finetuning, as an **oral oresentation** in NeurIPS 2023 [R0-FoMo workshop](https://sites.google.com/view/r0-fomo).
