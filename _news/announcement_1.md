@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2024-01-16 07:59:00-0400
+date: 2025-01-20 07:59:00-0400
 inline: true
 ---
-RoboShot is accepted to ICLR 2024!
+Our paper on ultra-efficient way to personalize language models is acepted at NAACL'25 Findings!
