@@ -2,7 +2,7 @@
 layout: page
 title: One Punch Man
 description: One Punch Man scene illustration
-img: assets/img/One_Punch_Man.png
+img: /assets/img/One_Punch_Man.png
 importance: 1
 category: work
 ---

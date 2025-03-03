@@ -2,7 +2,7 @@
 layout: page
 title: Anime inspired
 description: Anime inspired artwork
-img: assets/img/Spring_Heart.png
+img: /assets/img/Spring_Heart.png
 importance: 1
 category: work
 ---

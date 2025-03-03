@@ -2,7 +2,7 @@
 layout: page
 title: Culver's in Mars
 description: Valentine artwork
-img: assets/img/Ty.png
+img: /assets/img/Ty.png
 importance: 1
 category: work
 ---
