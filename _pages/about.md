@@ -6,7 +6,7 @@ subtitle: UW-Madison CS Dept. adila@wisc.edu.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: https://dyahadila.github.io/assets/img/prof_pic.jpg
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
