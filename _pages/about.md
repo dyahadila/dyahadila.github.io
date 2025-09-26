@@ -25,7 +25,7 @@ Hello! I am a PhD student at UW-Madison, advised by [Fred Sala](https://pages.cs
 - Building **robust and reliable models** that generalize across diverse scenarios
 - Exploring LLM **latent representations** to uncover emergent patterns and deeper insights into their internal mechanisms
 
-:dizzy: <span style="color:#ff33cc;"> **I’m currently on the job market for industry roles starting in 2026.**</span> Always happy to chat about research scientist or engineer opportunities!  
+:star2: <span style="color:#d633ff;"> **I’m currently on the job market for industry roles starting in 2026.**</span> Always happy to chat about research scientist or engineer opportunities!  
 
 
 **See my [CV](../assets/pdf/CV.pdf)**
