@@ -18,7 +18,7 @@ social: true  # includes social icons at the bottom of the page
   <img src="/assets/img/prof_pic.jpg" alt="Profile Picture" width="200px">
 </div>
 
-Hello! I am a PhD student at UW-Madison, advised by [Fred Sala](https://pages.cs.wisc.edu/~fredsala/), and part of the [Sprocket Lab](https://sprocketlab.github.io/). I’ve been fortunate to intern at Google Research, collaborating with Hanna Mazzawi and [Benoit Dherin](https://scholar.google.com/citations?user=4LtcTR8AAAAJ&hl=en) and as well as at AWS AI Research.
+Hello! I am a PhD student at UW-Madison, advised by [Fred Sala](https://pages.cs.wisc.edu/~fredsala/) in the [Sprocket Lab](https://sprocketlab.github.io/). I’ve been fortunate to intern at Google Research, collaborating with Hanna Mazzawi, [Benoit Dherin](https://scholar.google.com/citations?user=4LtcTR8AAAAJ&hl=en), and [Xavi Gonzalvo](https://xavigonzalvo.github.io/) and as well as at AWS AI Research.
 
 **Research Interest.** My work focuses on:
 - Developing **data and compute-efficient algorithms** for adapting LLMs to specific tasks and preferences
