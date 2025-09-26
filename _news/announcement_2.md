@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2025-02-28 07:59:00-0400
+date: 2025-03-01 07:59:00-0400
 inline: true
 ---
-Got a Student Researcher offer with Google AI NYC :)
+Check out our preprint on [data-and compute efficient LLM alignment](https://arxiv.org/html/2406.03642v2)!
