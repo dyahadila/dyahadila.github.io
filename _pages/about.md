@@ -14,7 +14,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-<div style="float: right; margin-left: 20px; margin-bottom: 10px;">
+<div style="float: right; margin-left: 15px; margin-bottom: 10px;">
   <img src="/assets/img/prof_pic.jpg" alt="Profile Picture" width="200px">
 </div>
 
