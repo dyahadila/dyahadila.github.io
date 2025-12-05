@@ -30,4 +30,6 @@ I’ve been fortunate to intern at Google Research, collaborating with Hanna Maz
 :star2: <span style="color:#d633ff;"> **I’m currently on the job market for industry roles starting in 2026.**</span> Always happy to chat about research scientist/engineer opportunities :)
 
 
-**See my [CV](../assets/pdf/CV.pdf)**
+<p style="font-size: 1.35em; font-weight: 700; text-align: center; background: #f8f0ff; border: 2px solid #d633ff; border-radius: 10px; padding: 12px 18px; display: inline-block;">
+  🚀 See my <a href="../assets/pdf/CV.pdf" style="color: #8a00c9; text-decoration: underline;">CV</a>
+</p>
