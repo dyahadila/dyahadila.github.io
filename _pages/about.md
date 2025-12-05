@@ -27,7 +27,7 @@ I’ve been fortunate to intern at Google Research, collaborating with Hanna Maz
 - Building **robust and reliable models** that generalize across diverse scenarios
 - Exploring LLM **latent representations** to uncover emergent patterns and deeper insights into their internal mechanisms
 
-:star2: <span style="color:#d633ff;"> **I’m currently on the job market for industry roles starting in 2026.**</span> Always happy to chat about research scientist/engineer opportunities :)
+:star2: <span style="color:#d633ff;"> **I’m currently on the industry job market for industry roles starting in 2026.**</span> Always happy to chat about research scientist/engineer opportunities :)
 
 
 <p style="font-size: 1.35em; font-weight: 700; text-align: center; background: #f8f0ff; border: 2px solid #d633ff; border-radius: 10px; padding: 12px 18px; display: inline-block;">
