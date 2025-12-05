@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: UW-Madison CS Dept. adila@wisc.edu.
+subtitle: adila@wisc.edu
 
 # Comment out the profile section
 # profile:
@@ -25,7 +25,7 @@ I’ve been fortunate to intern at Google Research, collaborating with Hanna Maz
 **Research Interest.**
 - Developing **data and compute-efficient algorithms** for adapting LLMs to specific tasks and preferences
 - Building **robust and reliable models** that generalize across diverse scenarios
-- Exploring LLM **latent representations** to uncover emergent patterns and deeper insights into their internal mechanisms
+- Exploring LLM **latent representations** to uncover deeper insights into their internal mechanisms
 
 :star2: <span style="color:#d633ff;"> **I’m currently on the industry job market.**</span> Always happy to chat about research scientist/engineer opportunities :)
 
