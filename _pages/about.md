@@ -27,7 +27,7 @@ I’ve been fortunate to intern at Google Research, collaborating with Hanna Maz
 - Building **robust and reliable models** that generalize across diverse scenarios
 - Exploring LLM **latent representations** to uncover deeper insights into their internal mechanisms
 
-:star2: <span style="color:#d633ff;"> **I’m currently on the industry job market.**</span> Always happy to chat about research scientist/engineer opportunities :)
+I will be joining [Scaled Cognition](https://www.scaledcognition.com/team) as a research scientist :)
 
 
 <p style="font-size: 1.15em; font-weight: 600; margin-top: 1.5rem;">
