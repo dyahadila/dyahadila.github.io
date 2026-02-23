@@ -20,8 +20,7 @@ Last Fall I was in the first half of my 5th year, just wrapping up an internship
 
 It all feels overwhelming at once. How do I even start? With PhD research projects still ongoing too, it's very tempting to procrastinate, but I eventually realized my advisor brought up graduation for a reason. I was indeed ready for independent research and carve my path outside of the lab. So what was the first step? 
 
-<div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: flex-start; margin: 2rem 0;">
-  <img src="{{ '/assets/img/blog/excel.png' | relative_url }}" alt="Excel screenshot" style="width: min(100%, 48%); height: auto;" />
-  <img src="{{ '/assets/img/blog/step_fn.png' | relative_url }}" alt="Step function figure" style="width: min(100%, 48%); height: auto;" />
+<div style="display: flex; flex-direction: column; align-items: center; gap: 1.25rem; margin: 2rem 0;">
+  <img src="{{ '/assets/img/blog/excel.png' | relative_url }}" alt="Excel screenshot" style="width: min(100%, 70%); height: auto;" />
+  <img src="{{ '/assets/img/blog/step_fn.png' | relative_url }}" alt="Step function figure" style="width: min(100%, 70%); height: auto;" />
 </div>
-
