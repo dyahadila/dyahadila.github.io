@@ -16,6 +16,6 @@ I break this into two parts. **Part 1** covers the end-to-end process: the first
 # Part 1: Job search end-to-end
 Last Fall I was in the first half of my 5th year, just wrapping up an internship where I realized I can now drive and own a project end to end; some stuff I learned during my internship even inspired me to kick off another project in my PhD. Really back then I was still comfortable being a PhD student. Suddenly my advisor brings up graduating next spring.
 
-<div class="tenor-gif-embed" data-postid="16491396616893958961" data-share-method="host" data-aspect-ratio="1" data-width="55%"><a href="https://tenor.com/view/bobawooyo-dog-confused-dog-huh-dog-meme-shocked-dog-gif-16491396616893958961">Bobawooyo Dog Confused GIF</a>from <a href="https://tenor.com/search/bobawooyo-gifs">Bobawooyo GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<div class="tenor-gif-embed" data-postid="16491396616893958961" data-share-method="host" data-aspect-ratio="1" data-width="55%" style="margin: 1.5rem auto 3rem auto;"><a href="https://tenor.com/view/bobawooyo-dog-confused-dog-huh-dog-meme-shocked-dog-gif-16491396616893958961">Bobawooyo Dog Confused GIF</a>from <a href="https://tenor.com/search/bobawooyo-gifs">Bobawooyo GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-It all feels overwhelming at once. How do I even start?
+It all feels overwhelming at once. How do I even start? With PhD research projects still ongoing too, it's very tempting to procrastinate, but I eventually realized my advisor brought up graduation for a reason. I was indeed ready for independent research and carve my path outside of the lab.
