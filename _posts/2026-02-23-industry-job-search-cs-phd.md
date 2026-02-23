@@ -18,4 +18,4 @@ Last Fall I was in the first half of my 5th year, just wrapping up an internship
 
 <div class="tenor-gif-embed" data-postid="16491396616893958961" data-share-method="host" data-aspect-ratio="1" data-width="55%"><a href="https://tenor.com/view/bobawooyo-dog-confused-dog-huh-dog-meme-shocked-dog-gif-16491396616893958961">Bobawooyo Dog Confused GIF</a>from <a href="https://tenor.com/search/bobawooyo-gifs">Bobawooyo GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-It all feels overwhelming at once. "How do I even start?" 
+It all feels overwhelming at once. How do I even start?
