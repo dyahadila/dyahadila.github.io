@@ -16,7 +16,7 @@ I will cover my experience with the end-to-end process: the first thing I did fr
 Last Fall I was in the first half of my 5th year, just wrapping up an internship and was excited to get back to school to kick off some new PhD projects. Back then I was still comfortable being a PhD student where I can freely explore even the most unhinged curiosities. Suddenly my advisor brings up graduating next spring.
 
 <div style="display: flex; justify-content: center; margin: 1.5rem 0 3rem 0;">
-  <div class="tenor-gif-embed" data-postid="16491396616893958961" data-share-method="host" data-aspect-ratio="1" data-width="100%" style="width: min(100%, 55%);"><a href="https://tenor.com/view/bobawooyo-dog-confused-dog-huh-dog-meme-shocked-dog-gif-16491396616893958961">Bobawooyo Dog Confused GIF</a>from <a href="https://tenor.com/search/bobawooyo-gifs">Bobawooyo GIFs</a></div>
+  <div class="tenor-gif-embed" data-postid="16491396616893958961" data-share-method="host" data-aspect-ratio="1" data-width="100%" style="width:55%;"><a href="https://tenor.com/view/bobawooyo-dog-confused-dog-huh-dog-meme-shocked-dog-gif-16491396616893958961">Bobawooyo Dog Confused GIF</a>from <a href="https://tenor.com/search/bobawooyo-gifs">Bobawooyo GIFs</a></div>
 </div>
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
@@ -108,7 +108,7 @@ I initially debated whether to include this as a subsection. Combining what I he
 There's probably a lot of articles/books covering this already, so I won't say much here. But I guess I'll say something that especially worked for me. Often the pressure of "there is still another interview next week" lured me to toughen up and think "no time to dwell, GRIND". It didnt work for me. I allowed myself to be dissapointed. One whole day of binging my fav show and lie down on the sofa usually did the trick.
 
 <div style="display: flex; justify-content: center; margin: 1.5rem 0 3rem 0;">
-  <div class="tenor-gif-embed" data-postid="16443073" data-share-method="host" data-aspect-ratio="1.11111" data-width="100%" style="width: min(100%, 55%);"><a href="https://tenor.com/view/eating-chocolate-sad-heartbroken-legally-blonde-gif-16443073">Eating Chocolate GIF</a>from <a href="https://tenor.com/search/eating-gifs">Eating GIFs</a></div>
+  <div class="tenor-gif-embed" data-postid="16443073" data-share-method="host" data-aspect-ratio="1.11111" data-width="100%" style="width:55%;"><a href="https://tenor.com/view/eating-chocolate-sad-heartbroken-legally-blonde-gif-16443073">Eating Chocolate GIF</a>from <a href="https://tenor.com/search/eating-gifs">Eating GIFs</a></div>
 </div>
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
@@ -131,6 +131,6 @@ This will look very different for each person. But I'll put my own timeline here
 The job search is stressful, and there's no way around that. But looking back, it was also a time where I learned a lot about myself: what I want to work on, what kind of team I thrive in, and what I value in a workplace. It also honed my technical and communicaion skills. If you're in the middle of it right now, I hope some of this was helpful. And if nothing else, make the spreadsheet. It really does help.
 
 <div style="display: flex; justify-content: center; margin: 1.5rem 0 3rem 0;">
-  <div class="tenor-gif-embed" data-postid="12509240942260499237" data-share-method="host" data-aspect-ratio="1.25" data-width="100%" style="width: min(100%, 55%);"><a href="https://tenor.com/view/the-woobles-woobles-pierre-penguin-cheerleader-gif-12509240942260499237">The Woobles Pierre GIF</a>from <a href="https://tenor.com/search/the+woobles-gifs">The Woobles GIFs</a></div>
+  <div class="tenor-gif-embed" data-postid="12509240942260499237" data-share-method="host" data-aspect-ratio="1.25" data-width="100%" style="width: min:55%;"><a href="https://tenor.com/view/the-woobles-woobles-pierre-penguin-cheerleader-gif-12509240942260499237">The Woobles Pierre GIF</a>from <a href="https://tenor.com/search/the+woobles-gifs">The Woobles GIFs</a></div>
 </div>
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
