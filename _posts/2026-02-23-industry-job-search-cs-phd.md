@@ -2,7 +2,7 @@
 layout: post
 title: "What I Learned from My Industry Job Search as a CS PhD"
 date: 2026-02-23 09:00:00 -0600
-description: "Notes and lessons from navigating an industry job search as a CS PhD student."
+description: "Notes from navigating an industry job search as a CS PhD student."
 tags: [career, industry, phd]
 categories: [blog]
 ---
@@ -42,7 +42,7 @@ To put into perspective: in the current market, just applying to the company's j
 <div style="display: flex; justify-content: center; margin: 1.5rem 0 3rem 0;">
 <div class="tenor-gif-embed" data-postid="10457554477233998682" data-share-method="host" data-aspect-ratio="1" data-width="55%"><a href="https://tenor.com/view/studying-study-gif-10457554477233998682">Studying Meme</a>from <a href="https://tenor.com/search/studying-memes">Studying Memes</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></div></script>
 
-This is where most of the beef in this blog is gonna be. I can only speak about the interview types I've gone through — it's possible there are more out there. But generally, ordered by how often I encountered them:
+This is where most of the beef in this blog is gonna be. I can only speak about the interview types I've gone through, it's possible there are more out there. But generally, ordered by how often I encountered them:
 
 - ML coding
 - ML debugging
@@ -63,6 +63,7 @@ Most companies I interviewed with didn't test all of these, just a subset. Usual
     - Simple MLP and backprop
     - Attention and its variants
     - KV cache
+- NumPy advanced indexing
 
 **ML debugging.** This one is somewhat tied to ML coding. Understanding the implementation usually got me better at spotting errors. For extra exercise i usually ask Claude (my chosen LLM provider) to give me common implementation bugs and I try to spot them.
 
@@ -85,3 +86,10 @@ I personally found this was a fun one to prep. I assume if you've made it this f
 - Do presentation roadmapping (what we've covered so far, what's next)
 - I found it wise to not try to fit every single paper in (since time is limited anyway). I picked ones I was most proud of and could connect into a unifying theme.
 
+**Leetcode-style coding.**
+I initially debated whether to include this as a subsection. Combining what I heard from others and my own experience, leetcode-style testing fell into two cases for research scientist interviews. Case one: easy-level problems to gauge if we can code in Python reasonably well. Case two: medium/hard-level problems, usually for roles where RS work is very close to production. Case two was much less common in my experience, and when it came up, it wasn't a surprise; the role description usually signaled it.
+
+**Probabilities/Statistics**
+- Make sure to know the basics: Bayes' theorem, common probability distributions, conditional probability/independence, expectation/variance, MLE, MAP, etc.
+- Doesn't hurt to skim standard statistics course lecture note
+- I find this problem set very useful: [https://jerryqin.com/posts/a-working-list-of-probability-problems](https://jerryqin.com/posts/a-working-list-of-probability-problems)
