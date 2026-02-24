@@ -50,7 +50,7 @@ This is where most of the beef in this blog is gonna be. I can only speak about 
 - Leetcode-style coding 
 - Probabilities/Statistics
 
-Most companies I interviewed with didn't test all of these, just a subset. Usually the recruiters or my points of contact gave me a brief overview of what the interview formats were going to be. At any given point when I was in the process with a company, I tailored my prep to their specific formats. Early on, when I was just starting to prep and waiting for interview calls, I focused more on ML coding, practiced leetcode problems for timed problem solving, and rehearsed LLM knowledge to make sure I understand even the smallest details (Karpathy's nano-GPT videos helped a LOT here). Next I'm gonna list the specific materials I used to prep for each topic. Shout out to my friend Harshay who recommended some of these list items when I started prepping.
+Most companies I interviewed with didn't test all of these, just a subset. Usually the recruiters or my points of contact gave me a brief overview of what the interview formats were going to be. At any given point when I was in the process with a company, I tailored my prep to their specific formats. Early on, when I was just starting to prep and waiting for interview calls, I focused more on ML coding, practiced leetcode problems for timed problem solving, and rehearsed LLM knowledge to make sure I understand even the smallest details. Next I'm gonna list the specific materials I used to prep for each topic. Shout out to my friend Harshay who recommended some of these list items when I started prepping.
 
 **ML coding.** 
 - [Karpathy's NanoGPT](https://github.com/karpathy/nanoGPT)
@@ -60,5 +60,19 @@ Most companies I interviewed with didn't test all of these, just a subset. Usual
     - Positional encodings
     - Simple MLP and backprop
     - Attention and its variants
+    - KV cache
 
 **ML debugging.** This one is somewhat tied to ML coding. Understanding the implementation usually got me better at spotting errors. For extra exercise i usually ask Claude (my chosen LLM provider) to give me common implementation bugs and I try to spot them.
+
+**ML concepts**
+- Brush up linear algebra basics (i watch 3b1b videos) and how the intuitions connect to ML concepts
+- For list of ML topics to read/brush up, i refer to [https://www.cs.cmu.edu/~hchai2/courses/10701/](https://www.cs.cmu.edu/~hchai2/courses/10701/)
+
+**Deep Learning and ML concepts**
+- Make sure to know:
+    - pre-training: scaling laws, chincilla compute optimal
+    - post-training: RLHF, SFT, DPO, GRPO, etc
+    - efficiency: flash-attention, GQA, MQA
+- I refer to [https://deeplearning.cs.cmu.edu/S25/](https://deeplearning.cs.cmu.edu/S25/) and [https://pages.cs.wisc.edu/~fredsala/cs639/schedule.html](https://pages.cs.wisc.edu/~fredsala/cs639/schedule.html) for list of topics
+
+Note: This field is very big and it can feel overwhelming to feel we **have** to know everything there is to know. I like to think the positions that is a good fit for me will test deeply on the topics related to my previous work. For example, I work a lot on post-training, so I put an emphasis on deep knowledge in post-training (but also made sure I know reasonably well on pre-training, efficiency, etc.)
