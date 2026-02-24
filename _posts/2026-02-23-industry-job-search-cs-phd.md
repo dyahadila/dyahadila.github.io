@@ -95,7 +95,7 @@ I personally found this was a fun one to prep. I assume if you've made it this f
 
 **Leetcode-style coding.**
 
-I initially debated whether to include this as a subsection. Combining what I heard from others and my own experience, leetcode-style testing fell into two cases for research scientist interviews. Case one: easy-level problems to gauge if we can code in Python reasonably well. Case two: medium/hard-level problems, usually for roles where RS work is very close to production. Case two was much less common in my experience, and when it came up, it wasn't a surprise; the role description usually signaled it.
+I initially debated whether to include this as a subsection. Combining what I heard from others and my own experience, leetcode-style testing fell into two cases for research scientist interviews. Case one: easy-level problems to gauge if we can code in Python reasonably well. Case two: medium/hard-level problems, usually for roles where RS work is very close to production. Case two was much less common in my experience, and when it came up, it wasn't a surprise; the role description usually signaled it. As usual with leetcode prepping, the possibility is quite vast. I'd recommend being fluent on the basics: BFS, DFS, recursion, binary search, and *always* know your big Os.
 
 **Probabilities/Statistics**
 
@@ -116,7 +116,7 @@ There's probably a lot of articles/books covering this already, so I won't say m
 Different people have different situations and priorities when it comes to this. I found [this twitter thread](https://x.com/amytam01/status/2023593365401636896?s=46&t=G2kDDwiccIQBCQZsT5ZT5w) to be especially relevant in today's market and environment. I guess I'll lay out the consideration factors for myself and friends in the market.
 
 - Surface area: how much does my output impact the team and organization
-- Mentorship: how much can I learn from my peers
+- Mentorship: how much can I learn from my peers and mentors
 - Research match: can I contribute to the team's mission with my current skillset
 
 ## My Timeline
@@ -126,6 +126,10 @@ This will look very different for each person. But I'll put my own timeline here
 - December: Networking at NeurIPS, first phone screens, start technical prep
 - January-early February: Interviews
 - Mid-February: Final rounds, offers, and decision-making.
+
+<div style="display: flex; justify-content: center; margin: 2rem 0;">
+  <img src="{{ '/assets/img/blog/timeline_blog.png' | relative_url }}" alt="Job search timeline" style="width: min(100%, 80%); height: auto;" />
+</div>
 
 ## Final thoughts
 The job search is stressful, and there's no way around that. But looking back, it was also a time where I learned a lot about myself: what I want to work on, what kind of team I thrive in, and what I value in a workplace. It also honed my technical and communicaion skills. If you're in the middle of it right now, I hope some of this was helpful. And if nothing else, make the spreadsheet. It really does help.
