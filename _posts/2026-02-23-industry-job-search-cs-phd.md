@@ -40,7 +40,8 @@ To put into perspective: in the current market, just applying to the company's j
 
 ## Preparing for the interviews
 
-<div class="tenor-gif-embed" data-postid="10457554477233998682" data-share-method="host" data-aspect-ratio="1" data-width="55%"><a href="https://tenor.com/view/studying-study-gif-10457554477233998682">Studying Meme</a>from <a href="https://tenor.com/search/studying-memes">Studying Memes</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></div></script>
+<div class="tenor-gif-embed" data-postid="10457554477233998682" data-share-method="host" data-aspect-ratio="1" data-width="55%"><a href="https://tenor.com/view/studying-study-gif-10457554477233998682">Studying Meme</a>from <a href="https://tenor.com/search/studying-memes">Studying Memes</a></div>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 This is where most of the beef in this blog is gonna be. I can only speak about the interview types I've gone through, it's possible there are more out there. But generally, ordered by how often I encountered them:
 
@@ -102,4 +103,4 @@ I initially debated whether to include this as a subsection. Combining what I he
 
 
 ## Dealing with rejection
-There's probably a lot of articles/books covering this already, so I won't say much here. But I guess I'll put a 
+There's probably a lot of articles/books covering this already, so I won't say much here. But I guess I'll say something that especially worked for me. A lot of the times the pressure of "there is still another interview next week" lure us to toughen up and think "no time to dwell, GRIND". It didnt work for me. I allowed myself to be dissapointed. One whole day of binging my fav show and lie down on the sofa usually did the trick.
