@@ -65,7 +65,9 @@ Most companies I interviewed with didn't test all of these, just a subset. Usual
     - Simple MLP and backprop
     - Attention and its variants
     - KV cache
-- NumPy advanced indexing
+- Advanced NumPy indexing
+- Sometimes more classical ML coding like K-Means
+- Data mixture
 
 **ML debugging.** This one is somewhat tied to ML coding. Understanding the implementation usually got me better at spotting errors. For extra exercise i usually ask Claude (my chosen LLM provider) to give me common implementation bugs and I try to spot them.
 
