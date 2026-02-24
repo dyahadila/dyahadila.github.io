@@ -67,10 +67,12 @@ Most companies I interviewed with didn't test all of these, just a subset. Usual
 **ML debugging.** This one is somewhat tied to ML coding. Understanding the implementation usually got me better at spotting errors. For extra exercise i usually ask Claude (my chosen LLM provider) to give me common implementation bugs and I try to spot them.
 
 **Classical ML concepts**
+
 - Brush up linear algebra basics (i watch 3b1b videos) and how the intuitions connect to ML concepts
 - For list of ML topics to read/brush up, i refer to [https://www.cs.cmu.edu/~hchai2/courses/10701/](https://www.cs.cmu.edu/~hchai2/courses/10701/)
 
 **Deep Learning and LLM concepts**
+
 - Make sure to know:
     - pre-training: scaling laws, chinchilla compute optimal
     - post-training: RLHF, SFT, DPO, GRPO, etc
@@ -80,15 +82,23 @@ Most companies I interviewed with didn't test all of these, just a subset. Usual
 Note: This field is very big and it can feel overwhelming to feel we *have* to know everything there is to know. I like to think the positions that are a good fit for me will test deeply on the topics related to my previous work. For example, I worked a lot on post-training, so I put an emphasis on deep knowledge in post-training (but also made sure I knew reasonably well about pre-training, efficiency, etc.)
 
 **Job talk.**
+
 I personally found this was a fun one to prep. I assume if you've made it this far, you have presented your qualifying/preliminary exam before. It's very similar to that. Though, some things I tried to keep in mind while making my slides and practicing my talk:
+
 - Do **not** present 3 different papers. Present a unified research theme consisting of 3 (or whatever number really) papers.
 - Do presentation roadmapping (what we've covered so far, what's next)
 - I found it wise to not try to fit every single paper in (since time is limited anyway). I picked ones I was most proud of and could connect into a unifying theme.
 
 **Leetcode-style coding.**
+
 I initially debated whether to include this as a subsection. Combining what I heard from others and my own experience, leetcode-style testing fell into two cases for research scientist interviews. Case one: easy-level problems to gauge if we can code in Python reasonably well. Case two: medium/hard-level problems, usually for roles where RS work is very close to production. Case two was much less common in my experience, and when it came up, it wasn't a surprise; the role description usually signaled it.
 
 **Probabilities/Statistics**
+
 - Make sure to know the basics: Bayes' theorem, common probability distributions, conditional probability/independence, expectation/variance, MLE, MAP, etc.
 - Doesn't hurt to skim standard statistics course lecture note
 - I find this problem set very useful: [https://jerryqin.com/posts/a-working-list-of-probability-problems](https://jerryqin.com/posts/a-working-list-of-probability-problems)
+
+
+## Dealing with rejection
+
