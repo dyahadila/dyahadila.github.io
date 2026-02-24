@@ -16,7 +16,7 @@ I will cover my experience with the end-to-end process: the first thing I did fr
 Last Fall I was in the first half of my 5th year, just wrapping up an internship and was excited to get back to school to kick off some new PhD projects. Back then I was still comfortable being a PhD student where I can freely explore even the most unhinged curiosities. Suddenly my advisor brings up graduating next spring.
 
 <div style="display: flex; justify-content: center; margin: 1.5rem 0 3rem 0;">
-  <div class="tenor-gif-embed" data-postid="16491396616893958961" data-share-method="host" data-aspect-ratio="1" data-width="60%" style="width: min(100%, 55%);"><a href="https://tenor.com/view/bobawooyo-dog-confused-dog-huh-dog-meme-shocked-dog-gif-16491396616893958961">Bobawooyo Dog Confused GIF</a>from <a href="https://tenor.com/search/bobawooyo-gifs">Bobawooyo GIFs</a></div>
+  <div class="tenor-gif-embed" data-postid="16491396616893958961" data-share-method="host" data-aspect-ratio="1" data-width="100%" style="width: min(100%, 55%);"><a href="https://tenor.com/view/bobawooyo-dog-confused-dog-huh-dog-meme-shocked-dog-gif-16491396616893958961">Bobawooyo Dog Confused GIF</a>from <a href="https://tenor.com/search/bobawooyo-gifs">Bobawooyo GIFs</a></div>
 </div>
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
@@ -39,7 +39,9 @@ To put into perspective: in the current market, just applying to the company's j
 
 ## Preparing for the interviews
 
-<div class="tenor-gif-embed" data-postid="10457554477233998682" data-share-method="host" data-aspect-ratio="1" data-width="55%"><a href="https://tenor.com/view/studying-study-gif-10457554477233998682">Studying Meme</a>from <a href="https://tenor.com/search/studying-memes">Studying Memes</a></div>
+<div style="display: flex; justify-content: center; margin: 1.5rem 0 3rem 0;">
+  <div class="tenor-gif-embed" data-postid="10457554477233998682" data-share-method="host" data-aspect-ratio="1" data-width="100%" style="width: min(100%, 55%);"><a href="https://tenor.com/view/studying-study-gif-10457554477233998682">Studying Meme</a>from <a href="https://tenor.com/search/studying-memes">Studying Memes</a></div>
+</div>
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 This is where most of the beef in this blog is gonna be. I can only speak about the interview types I've gone through, it's possible there are more out there. But generally, ordered by how often I encountered them:
@@ -105,7 +107,10 @@ I initially debated whether to include this as a subsection. Combining what I he
 ## Dealing with rejection
 There's probably a lot of articles/books covering this already, so I won't say much here. But I guess I'll say something that especially worked for me. Often the pressure of "there is still another interview next week" lured me to toughen up and think "no time to dwell, GRIND". It didnt work for me. I allowed myself to be dissapointed. One whole day of binging my fav show and lie down on the sofa usually did the trick.
 
-<div class="tenor-gif-embed" data-postid="16443073" data-share-method="host" data-aspect-ratio="1.11111" data-width="55%"><a href="https://tenor.com/view/eating-chocolate-sad-heartbroken-legally-blonde-gif-16443073">Eating Chocolate GIF</a>from <a href="https://tenor.com/search/eating-gifs">Eating GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<div style="display: flex; justify-content: center; margin: 1.5rem 0 3rem 0;">
+  <div class="tenor-gif-embed" data-postid="16443073" data-share-method="host" data-aspect-ratio="1.11111" data-width="100%" style="width: min(100%, 55%);"><a href="https://tenor.com/view/eating-chocolate-sad-heartbroken-legally-blonde-gif-16443073">Eating Chocolate GIF</a>from <a href="https://tenor.com/search/eating-gifs">Eating GIFs</a></div>
+</div>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 ## Deciding between multiple offers
 Different people have different situations and priorities when it comes to this. I found [this twitter thread](https://x.com/amytam01/status/2023593365401636896?s=46&t=G2kDDwiccIQBCQZsT5ZT5w) to be especially relevant in today's market and environment. I guess I'll lay out the consideration factors for myself and friends in the market.
@@ -114,7 +119,18 @@ Different people have different situations and priorities when it comes to this.
 - Mentorship: how much can I learn from my peers
 - Research match: can I contribute to the team's mission with my current skillset
 
+## My Timeline
+This will look very different for each person. But I'll put my own timeline here:
+- September/October: The "graduating?" talk and getting organized - procrastination cycle.
+- November: Initial reaching out.
+- December: Networking at NeurIPS, first phone screens, start technical prep
+- January-early February: Interviews
+- Mid-February: Final rounds, offers, and decision-making.
+
 ## Final thoughts
 The job search is stressful, and there's no way around that. But looking back, it was also a time where I learned a lot about myself: what I want to work on, what kind of team I thrive in, and what I value in a workplace. It also honed my technical and communicaion skills. If you're in the middle of it right now, I hope some of this was helpful. And if nothing else, make the spreadsheet. It really does help.
 
-<div class="tenor-gif-embed" data-postid="12509240942260499237" data-share-method="host" data-aspect-ratio="1.25" data-width="55%"><a href="https://tenor.com/view/the-woobles-woobles-pierre-penguin-cheerleader-gif-12509240942260499237">The Woobles Pierre GIF</a>from <a href="https://tenor.com/search/the+woobles-gifs">The Woobles GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<div style="display: flex; justify-content: center; margin: 1.5rem 0 3rem 0;">
+  <div class="tenor-gif-embed" data-postid="12509240942260499237" data-share-method="host" data-aspect-ratio="1.25" data-width="100%" style="width: min(100%, 55%);"><a href="https://tenor.com/view/the-woobles-woobles-pierre-penguin-cheerleader-gif-12509240942260499237">The Woobles Pierre GIF</a>from <a href="https://tenor.com/search/the+woobles-gifs">The Woobles GIFs</a></div>
+</div>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
