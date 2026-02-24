@@ -40,6 +40,8 @@ To put into perspective: in the current market, just applying to the company's j
 
 ### Preparing for the interviews
 
+<div class="tenor-gif-embed" data-postid="10457554477233998682" data-share-method="host" data-aspect-ratio="1" data-width="55%"><a href="https://tenor.com/view/studying-study-gif-10457554477233998682">Studying Meme</a>from <a href="https://tenor.com/search/studying-memes">Studying Memes</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
 This is where most of the beef in this blog is gonna be. I can only speak about the interview types I've gone through — it's possible there are more out there. But generally, ordered by how often I encountered them:
 
 - ML coding
@@ -76,3 +78,7 @@ Most companies I interviewed with didn't test all of these, just a subset. Usual
 - I refer to [https://deeplearning.cs.cmu.edu/S25/](https://deeplearning.cs.cmu.edu/S25/) and [https://pages.cs.wisc.edu/~fredsala/cs639/schedule.html](https://pages.cs.wisc.edu/~fredsala/cs639/schedule.html) for list of topics
 
 Note: This field is very big and it can feel overwhelming to feel we *have* to know everything there is to know. I like to think the positions that are a good fit for me will test deeply on the topics related to my previous work. For example, I worked a lot on post-training, so I put an emphasis on deep knowledge in post-training (but also made sure I knew reasonably well about pre-training, efficiency, etc.)
+
+**Job talk**
+I personally find this is a fun one to prep. I assume if you made it this far, you have presented your qualifying/preliminary exam before. It is very similar to that. Altho, what I usually try to keep in mind while making my slides and practicing my talk:
+- Do **not**
