@@ -64,11 +64,11 @@ Most companies I interviewed with didn't test all of these, just a subset. Usual
 
 **ML debugging.** This one is somewhat tied to ML coding. Understanding the implementation usually got me better at spotting errors. For extra exercise i usually ask Claude (my chosen LLM provider) to give me common implementation bugs and I try to spot them.
 
-**ML concepts**
+**Classical ML concepts**
 - Brush up linear algebra basics (i watch 3b1b videos) and how the intuitions connect to ML concepts
 - For list of ML topics to read/brush up, i refer to [https://www.cs.cmu.edu/~hchai2/courses/10701/](https://www.cs.cmu.edu/~hchai2/courses/10701/)
 
-**Deep Learning and ML concepts**
+**Deep Learning and LLM concepts**
 - Make sure to know:
     - pre-training: scaling laws, chinchilla compute optimal
     - post-training: RLHF, SFT, DPO, GRPO, etc
