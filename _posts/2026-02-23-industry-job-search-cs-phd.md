@@ -102,7 +102,7 @@ I initially debated whether to include this as a subsection. Combining what I he
 
 
 ## Dealing with rejection
-There's probably a lot of articles/books covering this already, so I won't say much here. But I guess I'll say something that especially worked for me. Often the pressure of "there is still another interview next week" lure us to toughen up and think "no time to dwell, GRIND". It didnt work for me. I allowed myself to be dissapointed. One whole day of binging my fav show and lie down on the sofa usually did the trick.
+There's probably a lot of articles/books covering this already, so I won't say much here. But I guess I'll say something that especially worked for me. Often the pressure of "there is still another interview next week" lured me to toughen up and think "no time to dwell, GRIND". It didnt work for me. I allowed myself to be dissapointed. One whole day of binging my fav show and lie down on the sofa usually did the trick.
 
 <div class="tenor-gif-embed" data-postid="16443073" data-share-method="host" data-aspect-ratio="1.11111" data-width="55%"><a href="https://tenor.com/view/eating-chocolate-sad-heartbroken-legally-blonde-gif-16443073">Eating Chocolate GIF</a>from <a href="https://tenor.com/search/eating-gifs">Eating GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
