@@ -39,6 +39,7 @@ To put into perspective: in the current market, just applying to the company's j
 **Look out for people that are hiring.** I kept an eye on X, LinkedIn, and AI/ML conference job expos for anyone posting "We are hiring in [blabla]" where the [blabla] was right up my alley, and I'd shoot them a message. A short message conveying I had worked on relevant stuff with a pointer to my website was usually sufficient. I was lucky that my job search timeline aligned with NeurIPS, so I had the chance to meet people at the conference. Before meeting anyone, I usually planned what to say. Nothing scripted, just enough to make sure I conveyed everything I wanted them to know about my work. I also made sure to ask them questions too: it's a two-way process. After the conference, I shot an email to folks I talked to (some even reached out before I shot them an email). And when the stars aligned, interviews followed. Sometimes they didn't, and that's okay too.
 
 ## Preparing for the interviews
+
 <div class="tenor-gif-embed" data-postid="10457554477233998682" data-share-method="host" data-aspect-ratio="1" data-width="55%"><a href="https://tenor.com/view/studying-study-gif-10457554477233998682">Studying Meme</a>from <a href="https://tenor.com/search/studying-memes">Studying Memes</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></div></script>
 
 This is where most of the beef in this blog is gonna be. I can only speak about the interview types I've gone through, it's possible there are more out there. But generally, ordered by how often I encountered them:
@@ -101,4 +102,4 @@ I initially debated whether to include this as a subsection. Combining what I he
 
 
 ## Dealing with rejection
-
+There's probably a lot of articles/books covering this already, so I won't say much here. But I guess I'll put a 
