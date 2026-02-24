@@ -8,12 +8,12 @@ categories: [blog]
 ---
 
 
-I recently wrapped up my ML PhD industry job search (research scientist position) and experienced how stressful and overwhelming the process can be. While it's still fresh, I wanted to share what I learned along the way in hopes it might help others navigating the same journey.
+I recently wrapped up my ML PhD industry job search and experienced how stressful and overwhelming the process can be. While it's still fresh, I wanted to share what I learned along the way in hopes it might help others navigating the same journey. Note: my experience was specifically on applying for Research Scientist positions. 
 
 
 I break this into two parts. **Part 1** covers the end-to-end process: the first thing I did from a "let's graduate" conversation with my advisor, getting my foot in the door, prepping for different interviews, dealing with rejection, and choosing between offers. **Part 2** covers some things I learned along the way: bouncing back after a bad interview, surviving back-to-back interviews, and how having a support system keeps me sane.
 
-# Part 1: Job search end-to-end
+# Part 1: From 'wait, I'm graduating?' to signing an offer
 Last Fall I was in the first half of my 5th year, just wrapping up an internship and was excited to get back to school to kick off some new PhD projects. Back then I was still comfortable being a PhD student where I can freely explore even the most unhinged curiosities. Suddenly my advisor brings up graduating next spring.
 
 <div style="display: flex; justify-content: center; margin: 1.5rem 0 3rem 0;">
@@ -31,3 +31,7 @@ It all feels overwhelming. How do I even start? With PhD research projects still
 </div>
 
 Okay, now we are organized, we are keeping track of our applications, great. Next, how do we actually get interview invites from these places?
+
+## Getting interviews
+
+To put into perspective: in the current market, just applying to the company's job portal puts us into one of possibly hundreds of fellow PhD students in the market, each with their unique research and cool things to offer. How do we stand out? 
