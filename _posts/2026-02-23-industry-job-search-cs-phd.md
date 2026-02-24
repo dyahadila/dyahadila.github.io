@@ -30,3 +30,4 @@ It all feels overwhelming. How do I even start? With PhD research projects still
   <img src="{{ '/assets/img/blog/step_fn.png' | relative_url }}" alt="Step function figure" style="width: 55%; height: auto;" />
 </div>
 
+Okay, now we are organized, we are keeping track of our applications, great. Next, how do we actually get interview invites from these places?
