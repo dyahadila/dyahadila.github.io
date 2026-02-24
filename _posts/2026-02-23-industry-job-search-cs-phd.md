@@ -78,6 +78,7 @@ Most companies I interviewed with didn't test all of these, just a subset. Usual
     - pre-training: scaling laws, chinchilla compute optimal
     - post-training: RLHF, SFT, DPO, GRPO, etc
     - efficiency: flash-attention, GQA, MQA
+    - tokenization
 - I refer to [https://deeplearning.cs.cmu.edu/S25/](https://deeplearning.cs.cmu.edu/S25/) and [https://pages.cs.wisc.edu/~fredsala/cs639/schedule.html](https://pages.cs.wisc.edu/~fredsala/cs639/schedule.html) for list of topics
 
 Note: This field is very big and it can feel overwhelming to feel we *have* to know everything there is to know. I like to think the positions that are a good fit for me will test deeply on the topics related to my previous work. For example, I worked a lot on post-training, so I put an emphasis on deep knowledge in post-training (but also made sure I knew reasonably well about pre-training, efficiency, etc.)
