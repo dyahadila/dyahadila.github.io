@@ -39,3 +39,26 @@ To put into perspective: in the current market, just applying to the company's j
 **Look out for people that are hiring.** I kept an eye on X, LinkedIn, and AI/ML conference job expos for anyone posting "We are hiring in [blabla]" where the [blabla] was right up my alley, and I'd shoot them a message. A short message conveying I had worked on relevant stuff with a pointer to my website was usually sufficient. I was lucky that my job search timeline aligned with NeurIPS, so I had the chance to meet people at the conference. Before meeting anyone, I usually planned what to say. Nothing scripted, just enough to make sure I conveyed everything I wanted them to know about my work. I also made sure to ask them questions too: it's a two-way process. After the conference, I shot an email to folks I talked to (some even reached out before I shot them an email). And when the stars aligned, interviews followed. Sometimes they didn't, and that's okay too.
 
 ### Preparing for the interviews
+
+This is where most of the beef in this blog is gonna be. I can only speak about the interview types I've gone through — it's possible there are more out there. But generally, ordered by how often I encountered them:
+
+- ML coding
+- ML debugging
+- ML concepts
+- Deep Learning and LLM concepts
+- Job talk
+- Leetcode-style coding 
+- Probabilities/Statistics
+
+Most companies I interviewed with didn't test all of these, just a subset. Usually the recruiters or my points of contact gave me a brief overview of what the interview formats were going to be. At any given point when I was in the process with a company, I tailored my prep to their specific formats. Early on, when I was just starting to prep and waiting for interview calls, I focused more on ML coding, practiced leetcode problems for timed problem solving, and rehearsed LLM knowledge to make sure I understand even the smallest details (Karpathy's nano-GPT videos helped a LOT here). Next I'm gonna list the specific materials I used to prep for each topic. Shout out to my friend Harshay who recommended some of these list items when I started prepping.
+
+**ML coding.** 
+- [Karpathy's NanoGPT](https://github.com/karpathy/nanoGPT)
+- Practice implementing these from scratch:
+    - Transformers
+    - Greedy sampling
+    - Positional encodings
+    - Simple MLP and backprop
+    - Attention and its variants
+
+**ML debugging.** This one is somewhat tied to ML coding. Understanding the implementation usually got me better at spotting errors. For extra exercise i usually ask Claude (my chosen LLM provider) to give me common implementation bugs and I try to spot them.
