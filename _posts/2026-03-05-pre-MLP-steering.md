@@ -1,4 +1,11 @@
-# The Case for Pre-MLP Steering
+---
+layout: post
+title: "The Case for Pre-MLP Steering"
+date: 2026-03-05 09:00:00 -0600
+description: "interesting stufs we learned about pre-MLP steering"
+tags: [research]
+categories: [blog]
+---
 
 Recently, we published [our paper](https://arxiv.org/abs/2603.00425) on principled activation steering (if you're here before checking out the paper, I recommend doing so; it is my favorite work of mine thus far). We found that post-block steering — after the residual connection is added back to the MLP output — is the theoretically backed, most expressive steering site. If your goal is replicating weight-based fine-tuning, post-block is the way to go.
 
