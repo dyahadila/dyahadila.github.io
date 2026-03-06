@@ -51,26 +51,44 @@ This is exactly pre-MLP steering with $$\delta h = \Delta_A$$. The attention mec
 
 ## On Activation Function's role in pre-MLP steering
 
-Early on, when we started experimenting with different intervention sites (pre-MLP, post-MLP, post-block), we stumbled upon something interesting: *a model's pre-MLP steerability is governed by its choice of activation function*. We found that models with SiLU are steerable across many layers, while models with GELU are only steerable at early layers.
+Early on, when we started experimenting with different intervention sites (pre-MLP, post-MLP, post-block), we stumbled upon something interesting: *a model's pre-MLP steerability is governed by its choice of activation function*. We found that models with SiLU are steerable across many layers, while models with GELU are only steerable at the very first layer.
 
-In the following figures, we perform pre-MLP steering on individual layers (x-axis) with varying steering strength $\alpha$, and measure how much steering moves the model toward a fine-tuned target. Specifically, the y-axis shows:
+In the following figures, we perform pre-MLP steering on individual layers (x-axis) with varying steering strength $$\alpha$$, and measure how much steering moves the model toward a fine-tuned target. Specifically, the y-axis shows:
 
 $$\Delta\text{KL} = \text{KL}(\text{steered} \| \text{finetuned}) - \text{KL}(\text{base} \| \text{finetuned})$$
 
-Negative values mean steering brought the model closer to the fine-tuned model (desirable), zero means no change, and positive means steering made things worse. We plot this for the first 5 generated tokens.
+Negative values mean steering brought the model closer to the fine-tuned model (desirable), zero means no change, and positive means steering made things worse. We plot this for the first 5 generated tokens. The dataset we use is Winogrande [6] formatted as an (A)/(B) multiple choice. So each generation step looks like:
 
-### Llama's plot (SiLU activation):
+```
+Token 1:
+Answer: The correct answer is (
+
+Token 2:
+Answer: The correct answer is (B
+
+Token 3:
+Answer: The correct answer is (B)
+
+Token 4:
+Answer: The correct answer is (B) Jennifer
+
+Token 5:
+Answer: The correct answer is (B) Jennifer.
+```
+
+### Llama (SiLU activation):
 
 <div style="display: flex; justify-content: center; margin: 2rem 0;">
-  <img src="{{ '/assets/img/pre_mlp_blog/llama_premlp.png' | relative_url }}" alt="Job search timeline" style="width:100%; height: auto;" />
+  <img src="{{ '/assets/img/pre_mlp_blog/llama_premlp.png' | relative_url }}" alt="Llama pre-MLP" style="width:100%; height: auto;" />
 </div>
 
-### Gemma's plot (GELU activation):
+### Gemma (GELU activation):
 
 <div style="display: flex; justify-content: center; margin: 2rem 0;">
-  <img src="{{ '/assets/img/pre_mlp_blog/gemma_premlp.png' | relative_url }}" alt="Job search timeline" style="width:100%; height: auto;" />
+  <img src="{{ '/assets/img/pre_mlp_blog/gemma_premlp.png' | relative_url }}" alt="Gemma pre-MLP" style="width:100%; height: auto;" />
 </div>
 
+**Notice the stark difference in steerability?** Especially on key tokens (like Token 2: A/B) Llama is steerable across many layers (and even more so on middle layers, aligned with the finding from one of the first steering papers [7]); while after layer 0, Gemma is practically unsteerable.
 
 
 ## Final Remarks
@@ -89,3 +107,6 @@ Note that the stuffs we discuss in this blog are conclusions drawn from a relati
 
 [5] Dherin, Benoit, et al. "Learning without training: The implicit dynamics of in-context learning." arXiv preprint arXiv:2507.16003 (2025).
 
+[6] Sakaguchi, Keisuke, et al. "Winogrande: An adversarial winograd schema challenge at scale." Communications of the ACM 64.9 (2021): 99-106.
+
+[7] Rimsky, Nina, et al. "Steering llama 2 via contrastive activation addition." Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2024.
