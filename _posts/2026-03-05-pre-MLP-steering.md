@@ -29,7 +29,7 @@ Pre-MLP steering does this update on activations before the MLP. In our experime
 
 ## In-Context Learning and Pre-MLP Steering are closely related
 
-TLDR: *What ICL does implicitly — shifting attention outputs based on context — is what pre-MLP steering does explicitly*
+TLDR: **What ICL does implicitly — shifting attention outputs based on context — is what pre-MLP steering does explicitly**
 
 Consider a single Transformer block $$T$$ with an input $$h$$ (the residual stream, usually the output from the previous layer):
 
@@ -51,7 +51,7 @@ This is exactly pre-MLP steering with $$\delta h = \Delta_A$$. The attention mec
 
 ## On Activation Function's role in pre-MLP steering
 
-Early on, when we started experimenting with different intervention sites (pre-MLP, post-MLP, post-block), we stumbled upon something interesting: *a model's pre-MLP steerability is governed by its choice of activation function*. Our experiments suggest that models with SiLU are steerable across many layers, while models with GELU are only steerable at the very first layer.
+Early on, when we started experimenting with different intervention sites (pre-MLP, post-MLP, post-block), we stumbled upon something interesting: **a model's pre-MLP steerability is governed by its choice of activation function**. Our experiments suggest that models with SiLU are steerable across many layers, while models with GELU are only steerable at the very first layer.
 
 In the following figures, we perform pre-MLP steering on individual layers (x-axis) with varying steering strength $$\alpha$$, and measure how much steering moves the model toward a fine-tuned target. Specifically, the y-axis shows:
 
@@ -113,6 +113,7 @@ W_d\Big[
 +
 \underbrace{\phi(a_g)\odot (W_u \Delta h)}_{\text{un-gated path}}
 \Big] 
+\\
 + O(\|\Delta h\|^2)
 $$
 
