@@ -41,11 +41,13 @@ The attention output gets added to the residual stream, and the MLP receives the
 
 $$T(C, h) = h + \text{Attn}(C, h) + \text{MLP}(h + \text{Attn}(C, h))$$
 
-The attention output shifts: $\text{Attn}(h) \mapsto \text{Attn}(C, h)$, and this shifted value feeds into both the skip connection and the MLP. From the MLP's perspective, its input changed from $h + \text{Attn}(h)$ to $h + \text{Attn}(C, h)$. We can rewrite this as:
+The attention output shifts: $$\text{Attn}(h) \mapsto \text{Attn}(C, h)$$, and this shifted value feeds into both the skip connection and the MLP. From the MLP's perspective, its input changed from $$h + \text{Attn}(h)$$ to $$h + \text{Attn}(C, h)$$. We can rewrite this as:
 
 $$h + \text{Attn}(C, h) = \underbrace{h + \text{Attn}(h)}_{\text{original MLP input}} + \underbrace{\text{Attn}(C, h) - \text{Attn}(h)}_{\Delta_A}$$
 
-This is exactly pre-MLP steering with $\delta h = \Delta_A$. The attention mechanism computes the steering vector for us: ICL *is* pre-MLP steering (when we set $\delta h$ to be $\Delta_A$), where the context determines the direction. This observation is straightforward, but there's a deeper result: Dherin et al. 2025 [5] showed this attention shift is equivalent to a rank-1 weight update to the MLP (highly recommend checking this paper out if you haven't, it's awesome).
+This is exactly pre-MLP steering with $$\delta h = \Delta_A$$. The attention mechanism computes the steering vector for us: ICL *is* pre-MLP steering (when we set $$\delta h$$ to be $$\Delta_A$$), where the context determines the direction. This observation is straightforward, but there's a deeper result: Dherin et al. 2025 [5] showed this attention shift is equivalent to a rank-1 weight update to the MLP (highly recommend checking this paper out if you haven't, it's awesome).
+
+## Activation Function plays a big role in pre-MLP steering
 
 
 
