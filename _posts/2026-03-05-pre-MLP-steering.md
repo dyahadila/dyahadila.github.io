@@ -41,7 +41,9 @@ The attention output gets added to the residual stream, and the MLP receives the
 
 $$T(C, h) = h + \text{Attn}(C, h) + \text{MLP}(h + \text{Attn}(C, h))$$
 
-The attention output shifts: $$\text{Attn}(h) \mapsto \text{Attn}(C, h)$$, and this shifted value feeds into both the skip connection and the MLP. From the MLP's perspective, its input changed from $$h + \text{Attn}(h)$$ to $$h + \text{Attn}(C, h)$$. We can rewrite this as:
+The attention output shifts: $$\text{Attn}(h) \mapsto \text{Attn}(C, h)$$, and this shifted value feeds into both the skip connection and the MLP. 
+
+From the MLP's perspective, its input changed from $$h + \text{Attn}(h)$$ to $$h + \text{Attn}(C, h)$$. We can rewrite this as:
 
 $$h + \text{Attn}(C, h) = \underbrace{h + \text{Attn}(h)}_{\text{original MLP input}} + \underbrace{\text{Attn}(C, h) - \text{Attn}(h)}_{\Delta_A}$$
 
