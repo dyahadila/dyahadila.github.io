@@ -88,7 +88,9 @@ Answer: The correct answer is (B) Jennifer.
   <img src="{{ '/assets/img/pre_mlp_blog/gemma_premlp.png' | relative_url }}" alt="Gemma pre-MLP" style="width:100%; height: auto;" />
 </div>
 
-**Notice the stark difference in steerability?** Especially on key tokens (like Token 2: A/B) Llama is steerable across many layers (and even more so on middle layers, aligned with the finding from one of the first steering papers [7]); while after layer 0, Gemma is practically unsteerable. Now to show this is uniquely a pre-MLP steerability phenomenon, here is Gemma with post-MLP steering:
+**Notice the stark difference in steerability?** Especially on key tokens (like Token 2: A/B) Llama is steerable across many layers (and even more so on middle layers, aligned with the finding from one of the first steering papers [7]); while after layer 0, Gemma is practically unsteerable. 
+
+To confirm this is a pre-MLP phenomenon and not a general property of Gemma, here is Gemma with post-MLP steering:
 
 ### Gemma (post-MLP steering)
 
