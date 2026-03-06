@@ -31,13 +31,13 @@ Pre-MLP steering does this update on activations before the MLP. In our experime
 
 TLDR: *What ICL does implicitly — shifting attention outputs based on context — is what pre-MLP steering does explicitly*
 
-Consider a single Transformer block $T$ with an input $h$ (the residual stream, usually the output from the previous layer):
+Consider a single Transformer block $$T$$ with an input $$h$$ (the residual stream, usually the output from the previous layer):
 
 $$T(h) = h + \text{Attn}(h) + \text{MLP}(h + \text{Attn}(h))$$
 
 (We omit LayerNorm for clarity, but the argument holds with it included.)
 
-The attention output gets added to the residual stream, and the MLP receives the sum $h + \text{Attn}(h)$ as its input. Now, what happens when we add context $C$ (e.g., a few input-output examples) to the prompt? The attention layer is the only component that directly accesses other tokens in the sequence, as the MLP processes each position independently. So context enters the block through attention, and everything downstream reacts to that shifted input:
+The attention output gets added to the residual stream, and the MLP receives the sum $$h + \text{Attn}(h)$$ as its input. Now, what happens when we add context $$C$$ (e.g., a few input-output examples) to the prompt? The attention layer is the only component that directly accesses other tokens in the sequence, as the MLP processes each position independently. So context enters the block through attention, and everything downstream reacts to that shifted input:
 
 $$T(C, h) = h + \text{Attn}(C, h) + \text{MLP}(h + \text{Attn}(C, h))$$
 
