@@ -7,7 +7,7 @@ tags: [research]
 categories: [blog]
 ---
 
-Recently, we published [our paper](https://arxiv.org/abs/2603.00425) [1] on principled activation steering (if you haven't, I recommend checking out the paper! it is the PhD work I am most proud of :wink:). We found that post-block steering — after the residual connection is added back to the MLP output — is the theoretically backed, most expressive steering site. If your goal is replicating weight-based fine-tuning with orders or magnitude less parameters, post-block is the way to go.
+Recently, we published [our paper](https://arxiv.org/abs/2603.00425) [1] on principled activation steering (if you haven't, I recommend checking out the paper! it is the PhD work I am most proud of :wink:). We found that post-block steering — after the residual connection is added back to the MLP output — is the theoretically backed, most expressive steering site. If your goal is replicating weight-based fine-tuning with orders of magnitude less parameters, post-block is the way to go.
 
 But that doesn't mean pre-MLP steering isn't interesting. During our analysis, we discovered that pre-MLP steering (while less expressive for fine-tuning-like effects) reveals something interesting about how models process context. In fact, it has a neat connection to in-context learning. In this blog we are going to discuss interesting things we learned about pre-MLP steering during the project. Mainly:
 
@@ -21,15 +21,31 @@ First let's set up some notation and define what we mean by pre-MLP steering. Fo
 
 $$ h \to h + \delta h $$. 
 
-Pre-MLP steering does this update on activations before the MLP. In our experiments we steer the output of attention (red text arrow below), but there are works that steer specific attention heads like those in [2, 3, 4].
+Pre-MLP steering does this update on activations before the MLP. In our experiments we steer the output of attention (red text arrow below), but there are works that steer specific attention heads like those in [2, 3, 4]. Note: we have only checked the derivation and experiments in this blog on pre-MLP steering like our formulation, we have not analyzed if the same math checks out for per-head steering.
 
 <div style="display: flex; justify-content: center; margin: 2rem 0;">
   <img src="{{ '/assets/img/pre_mlp_blog/steering_sites.png' | relative_url }}" alt="Jintervention sites" style="width:60%; height: auto;" />
 </div>
 
-## In Context-Learning and Pre-MLP Steering are closely related
+## In-Context Learning and Pre-MLP Steering are closely related
 
-TLDR: <span style="color: var(--global-theme-color);">*It turns out that what ICL does implicitly — shifting attention outputs based on context — is what pre-MLP steering does explicitly*</span>
+TLDR: *What ICL does implicitly — shifting attention outputs based on context — is what pre-MLP steering does explicitly*
+
+Consider a single Transformer block $T$ with an input $h$ (the residual stream, usually the output from the previous layer):
+
+$$T(h) = h + \text{Attn}(h) + \text{MLP}(h + \text{Attn}(h))$$
+
+(We omit LayerNorm for clarity, but the argument holds with it included.)
+
+The attention output gets added to the residual stream, and the MLP receives the sum $h + \text{Attn}(h)$ as its input. Now, what happens when we add context $C$ (e.g., a few input-output examples) to the prompt? The attention layer is the only component that directly accesses other tokens in the sequence, as the MLP processes each position independently. So context enters the block through attention, and everything downstream reacts to that shifted input:
+
+$$T(C, h) = h + \text{Attn}(C, h) + \text{MLP}(h + \text{Attn}(C, h))$$
+
+The attention output shifts: $\text{Attn}(h) \mapsto \text{Attn}(C, h)$, and this shifted value feeds into both the skip connection and the MLP. From the MLP's perspective, its input changed from $h + \text{Attn}(h)$ to $h + \text{Attn}(C, h)$. We can rewrite this as:
+
+$$h + \text{Attn}(C, h) = \underbrace{h + \text{Attn}(h)}_{\text{original MLP input}} + \underbrace{\text{Attn}(C, h) - \text{Attn}(h)}_{\Delta_A}$$
+
+This is exactly pre-MLP steering with $\delta h = \Delta_A$. The attention mechanism computes the steering vector for us: ICL *is* pre-MLP steering (when we set $\delta h$ to be $\Delta_A$), where the context determines the direction. This observation is straightforward, but there's a deeper result: Dherin et al. 2025 [5] showed this attention shift is equivalent to a rank-1 weight update to the MLP (highly recommend checking this paper out if you haven't, it's awesome).
 
 
 
@@ -46,4 +62,6 @@ Note that the stuffs we discuss in this blog are conclusions drawn from a relati
 [3] Li, Kenneth, et al. "Inference-time intervention: Eliciting truthful answers from a language model." Advances in Neural Information Processing Systems 36 (2023): 41451-41530.
 
 [4] Todd, Eric, et al. "Function vectors in large language models." arXiv preprint arXiv:2310.15213 (2023).
+
+[5] Dherin, Benoit, et al. "Learning without training: The implicit dynamics of in-context learning." arXiv preprint arXiv:2507.16003 (2025).
 
