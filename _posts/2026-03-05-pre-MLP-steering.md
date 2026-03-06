@@ -19,7 +19,7 @@ But that doesn't mean pre-MLP steering isn't interesting. During our analysis, w
 
 First let's set up some notation and define what we mean by pre-MLP steering. Following notation in our paper, steering updates a model's activations as follows:
 
-$$ h \to h + \delta h $$. 
+$$h \to h + \delta h$$. 
 
 Pre-MLP steering does this update on activations before the MLP. In our experiments we steer the output of attention (red text arrow below), but there are works that steer specific attention heads like those in [2, 3, 4]. Note: we have only checked the derivation and experiments in this blog on pre-MLP steering like our formulation, we have not analyzed if the same math checks out for per-head steering.
 
@@ -49,7 +49,27 @@ $$h + \text{Attn}(C, h) = \underbrace{h + \text{Attn}(h)}_{\text{original MLP in
 
 This is exactly pre-MLP steering with $$\delta h = \Delta_A$$. The attention mechanism computes the steering vector for us: ICL *is* pre-MLP steering (when we set $$\delta h$$ to be $$\Delta_A$$), where the context determines the direction. This observation is straightforward, but there's a deeper result: Dherin et al. 2025 [5] showed this attention shift is equivalent to a rank-1 weight update to the MLP (highly recommend checking this paper out if you haven't, it's awesome).
 
-## Activation Function plays a big role in pre-MLP steering
+## On Activation Function's role in pre-MLP steering
+
+Early on, when we started experimenting with different intervention sites (pre-MLP, post-MLP, post-block), we stumbled upon something interesting: *a model's pre-MLP steerability is governed by its choice of activation function*. We found that models with SiLU are steerable across many layers, while models with GELU are only steerable at early layers.
+
+In the following figures, we perform pre-MLP steering on individual layers (x-axis) with varying steering strength $\alpha$, and measure how much steering moves the model toward a fine-tuned target. Specifically, the y-axis shows:
+
+$$\Delta\text{KL} = \text{KL}(\text{steered} \| \text{finetuned}) - \text{KL}(\text{base} \| \text{finetuned})$$
+
+Negative values mean steering brought the model closer to the fine-tuned model (desirable), zero means no change, and positive means steering made things worse. We plot this for the first 5 generated tokens.
+
+### Llama's plot (SiLU activation):
+
+<div style="display: flex; justify-content: center; margin: 2rem 0;">
+  <img src="{{ '/assets/img/pre_mlp_blog/llama_premlp.png' | relative_url }}" alt="Job search timeline" style="width:100%; height: auto;" />
+</div>
+
+### Gemma's plot (GELU activation):
+
+<div style="display: flex; justify-content: center; margin: 2rem 0;">
+  <img src="{{ '/assets/img/pre_mlp_blog/gemma_premlp.png' | relative_url }}" alt="Job search timeline" style="width:100%; height: auto;" />
+</div>
 
 
 
