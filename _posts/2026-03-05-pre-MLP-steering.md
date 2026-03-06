@@ -51,7 +51,7 @@ This is exactly pre-MLP steering with $$\delta h = \Delta_A$$. The attention mec
 
 ## On Activation Function's role in pre-MLP steering
 
-Early on, when we started experimenting with different intervention sites (pre-MLP, post-MLP, post-block), we stumbled upon something interesting: *a model's pre-MLP steerability is governed by its choice of activation function*. We found that models with SiLU are steerable across many layers, while models with GELU are only steerable at the very first layer.
+Early on, when we started experimenting with different intervention sites (pre-MLP, post-MLP, post-block), we stumbled upon something interesting: *a model's pre-MLP steerability is governed by its choice of activation function*. Our experiments suggest that models with SiLU are steerable across many layers, while models with GELU are only steerable at the very first layer.
 
 In the following figures, we perform pre-MLP steering on individual layers (x-axis) with varying steering strength $$\alpha$$, and measure how much steering moves the model toward a fine-tuned target. Specifically, the y-axis shows:
 
@@ -97,6 +97,24 @@ To confirm this is a pre-MLP phenomenon and not a general property of Gemma, her
 <div style="display: flex; justify-content: center; margin: 2rem 0;">
   <img src="{{ '/assets/img/pre_mlp_blog/gemma_postmlp.png' | relative_url }}" alt="Gemma post-MLP" style="width:100%; height: auto;" />
 </div>
+
+Gemma becomes steerable again — particularly at token 2 and token 4 in the middle layers. 
+
+Note: these are different models, so the activation function isn't the only variable, but the post-MLP control experiment strongly suggests it's the key factor.
+
+### Why? A closer look into activation function
+
+Pre-MLP steering has to propagate through the MLP's nonlinearity, while post-MLP steering bypasses it entirely. From [our paper](https://arxiv.org/abs/2603.00425), the output shift caused by pre-MLP steering:
+
+$$
+\Delta \text{GLU}_{\text{steer}}(h) = 
+W_d\Big[
+\underbrace{(\phi'(a_g)\odot a_u)\odot (W_g \Delta h)}_{\text{gated path}}
++
+\underbrace{\phi(a_g)\odot (W_u \Delta h)}_{\text{un-gated path}}
+\Big] 
++ O(\|\Delta h\|^2)
+$$
 
 
 ## Final Remarks
