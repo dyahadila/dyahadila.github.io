@@ -18,7 +18,7 @@ We analyze three common steering site choices, <span style="color: red;">pre-MLP
 But that doesn't mean <span style="color: red;">pre-MLP</span> steering isn't interesting. In this blog we're going to discuss things we learned about <span style="color: red;">pre-MLP</span> steering during the project. Mainly:
 
 1. <span style="color: red;">Pre-MLP</span> steering has a strong connection with in-context learning (ICL).
-2. The choice of a model's *activation function* plays a role in how steerable a model is when we do <span style="color: red;">pre-MLP</span> steering
+2. Different models show very different pre-MLP steerability — and the MLP's nonlinearity appears to play a role, though the full picture is still open.
 
 
 ## Pre-MLP steering formulation
@@ -53,9 +53,9 @@ $$h + \text{Attn}(C, h) = \underbrace{h + \text{Attn}(h)}_{\text{original MLP in
 
 This is exactly pre-MLP steering with $$\delta h = \Delta_A$$. The attention mechanism computes the steering vector for us: ICL *is* pre-MLP steering (when we set $$\delta h$$ to be $$\Delta_A$$), where the context determines the direction. This observation is straightforward, but there's a deeper result: Dherin et al. 2025 [5] showed this attention shift is equivalent to a rank-1 weight update to the MLP (highly recommend checking this paper out if you haven't, it's awesome).
 
-## On Activation Function's role in pre-MLP steering
+## Why are some models harder to steer pre-MLP?
 
-Early on, when we started experimenting with different intervention sites, we stumbled upon something interesting: <b style="color: #B509AC;">a model's pre-MLP steerability is shaped by by its choice of activation function</b>. Our experiments suggest that models with SiLU are steerable across many layers, while models with GELU are only steerable at the very first layer.
+Early on, when we started experimenting with different intervention sites, we stumbled upon something interesting: <b style="color: #B509AC;">different models show very different pre-MLP steerability</b>. In our experiments, Llama (which uses SiLU) is steerable across many layers, while Gemma (which uses GELU) is practically unsteerable after layer 0 — and the MLP's nonlinearity appears to be involved.
 
 In the following figures, we perform pre-MLP steering on individual layers (x-axis) with varying steering strength $$\alpha$$, and measure how much steering moves the model toward a fine-tuned target (measured as the logit output). Specifically, the y-axis shows:
 
@@ -104,9 +104,9 @@ To confirm this is a <span style="color: red;">pre-MLP</span> phenomenon and not
 
 Gemma becomes steerable again, particularly at token 2 and token 4 in the middle layers. 
 
-Note: these are different models, so the activation function isn't the only variable, but the post-MLP control experiment strongly suggests it's the key factor.
+Note: these are different models, so the activation function isn't the only variable. But the post-MLP control experiment strongly suggests the bottleneck is inside the MLP.
 
-### Why? A closer look into activation function
+### A closer look: where does the signal die?
 
 Pre-MLP steering has to propagate through the MLP's nonlinearity, while post-MLP steering bypasses it entirely. From [our paper](https://arxiv.org/abs/2603.00425), the output shift caused by pre-MLP steering is:
 
@@ -121,11 +121,17 @@ W_d\Big[
 + O(\|\Delta h\|^2)
 $$
 
-Given a fixed steering $$\Delta h$$, the output shift is modulated by two input-dependent terms:
-1. $$\phi'(a_g) \odot a_u$$ in the gated path
-2. $$\phi(a_g)$$ in the un-gated path
+Given a fixed steering $\Delta h$, the output shift is modulated by two input-dependent terms:
+1. $\phi'(a_g) \odot a_u$ in the gated path
+2. $\phi(a_g)$ in the un-gated path
 
-where $$a_g = W_g h$$, $$a_u = W_u h$$, and $$\phi$$ is the activation function. When $$\phi'(a_g)$$ and $$\phi(a_g)$$
+where $a_g = W_g h$, $a_u = W_u h$, and $\phi$ is the activation function. Our initial hypothesis was that GELU's sharper saturation (compared to SiLU) suppresses these modulation terms, killing the steering signal. However, when we plot the distributions of these terms for both models, they look surprisingly similar:
+
+<div style="display: flex; justify-content: center; margin: 2rem 0;">
+  <img src="{{ '/assets/img/pre_mlp_blog/phi_comparison_token2.png' | relative_url }}" alt="phi comparison" style="width:100%; height: auto;" />
+</div>
+
+The modulation terms have comparable magnitude in both models, so the activation function's effect on these terms alone doesn't explain Gemma's lack of steerability. The root cause likely involves other factors (LayerNorm behavior, weight matrix structure, or how $W_g \Delta h$ aligns with the active dimensions), and remains an open question. What we can say is that the bottleneck is inside the MLP: post-MLP steering bypasses it entirely and restores steerability.
 
 
 ## Final Remarks
