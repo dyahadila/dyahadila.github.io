@@ -17,23 +17,24 @@ We analyze three common steering site choices, <span style="color: red;">pre-MLP
 
 But that doesn't mean <span style="color: red;">pre-MLP</span> steering isn't interesting. In this blog we're going to discuss things we learned about <span style="color: red;">pre-MLP</span> steering during the project. Mainly:
 
+
 1. <span style="color: red;">Pre-MLP</span> steering has a strong connection with in-context learning (ICL).
-2. Different models show very different pre-MLP steerability — and the MLP's nonlinearity appears to play a role, though the full picture is still open.
+2. Different models show very different <span style="color: red;">pre-MLP</span> steerability — and the MLP's nonlinearity appears to play a role, though the full picture is still open.
 
 
-## Pre-MLP steering formulation
+## <span style="color: red;">Pre-MLP</span> steering formulation
 
-First let's set up some notation and define what we mean by pre-MLP steering. Following notation in our paper, steering updates a model's activations as follows:
+First let's set up some notation and define what we mean by <span style="color: red;">pre-MLP</span> steering. Following notation in our paper, steering updates a model's activations as follows:
 
 $$h \to h + \delta h$$. 
 
-Pre-MLP steering does this update on activations before the MLP. In our experiments below we steer the output of attention, but there are works that steer specific attention heads like those in [2, 3, 4]. 
+<span style="color: red;">Pre-MLP</span> steering does this update on activations before the MLP. In our experiments below we steer the output of attention, but there are works that steer specific attention heads like those in [2, 3, 4]. 
 
-Note: we have only checked the derivation and experiments in this blog on pre-MLP steering like our formulation, we have not analyzed if the same checks out for per-head steering.
+Note: we have only checked the derivation and experiments in this blog on <span style="color: red;">pre-MLP</span> steering like our formulation, we have not analyzed if the same checks out for per-head steering.
 
-## In-Context Learning and Pre-MLP Steering are closely related
+## In-Context Learning and <span style="color: red;">Pre-MLP</span> Steering are closely related
 
-TLDR: <b style="color: #B509AC;">What ICL does implicitly — shifting attention outputs based on context — is what pre-MLP steering does explicitly</b>
+TLDR: <b style="color: #B509AC;">What ICL does implicitly — shifting attention outputs based on context — is what <span style="color: red;">pre-MLP</span> steering does explicitly</b>
 
 Consider a single Transformer block $$T$$ with an input $$h$$ (the residual stream, usually the output from the previous layer):
 
@@ -51,13 +52,13 @@ From the MLP's perspective, its input changed from $$h + \text{Attn}(h)$$ to $$h
 
 $$h + \text{Attn}(C, h) = \underbrace{h + \text{Attn}(h)}_{\text{original MLP input}} + \underbrace{\text{Attn}(C, h) - \text{Attn}(h)}_{\Delta_A}$$
 
-This is exactly pre-MLP steering with $$\delta h = \Delta_A$$. The attention mechanism computes the steering vector for us: ICL *is* pre-MLP steering (when we set $$\delta h$$ to be $$\Delta_A$$), where the context determines the direction. This observation is straightforward, but there's a deeper result: Dherin et al. 2025 [5] showed this attention shift is equivalent to a rank-1 weight update to the MLP (highly recommend checking this paper out if you haven't, it's awesome).
+This is exactly <span style="color: red;">pre-MLP</span> steering with $$\delta h = \Delta_A$$. The attention mechanism computes the steering vector for us: ICL *is* <span style="color: red;">pre-MLP</span> steering (when we set $$\delta h$$ to be $$\Delta_A$$), where the context determines the direction. This observation is straightforward, but there's a deeper result: Dherin et al. 2025 [5] showed this attention shift is equivalent to a rank-1 weight update to the MLP (highly recommend checking this paper out if you haven't, it's awesome).
 
-## Why are some models harder to steer pre-MLP?
+## Why are some models harder to steer <span style="color: red;">pre-MLP</span>?
 
-Early on, when we started experimenting with different intervention sites, we stumbled upon something interesting: <b style="color: #B509AC;">different models show very different pre-MLP steerability</b>. In our experiments, Llama (which uses SiLU) is steerable across many layers, while Gemma (which uses GELU) is practically unsteerable after layer 0 — and the MLP's nonlinearity appears to be involved.
+Early on, when we started experimenting with different intervention sites, we stumbled upon something interesting: <b style="color: #B509AC;">different models show very different <span style="color: red;">pre-MLP</span> steerability</b>. In our experiments, Llama (which uses SiLU) is steerable across many layers, while Gemma (which uses GELU) is practically unsteerable after layer 0 — and the MLP's nonlinearity appears to be involved.
 
-In the following figures, we perform pre-MLP steering on individual layers (x-axis) with varying steering strength $$\alpha$$, and measure how much steering moves the model toward a fine-tuned target (measured as the logit output). Specifically, the y-axis shows:
+In the following figures, we perform <span style="color: red;">pre-MLP</span> steering on individual layers (x-axis) using the oracle steering vector $\delta h_{\text{oracle}} = h_{\text{finetuned}} - h_{\text{base}}$ — literally replacing the base model's activation with the fine-tuned model's activation at that layer. We scale this vector by a steering strength $\alpha$ and measure how much the steered model's output moves toward the fine-tuned target. Specifically, the y-axis shows:
 
 $$\Delta\text{KL} = \text{KL}(\text{steered} \| \text{finetuned}) - \text{KL}(\text{base} \| \text{finetuned})$$
 
@@ -104,11 +105,11 @@ To confirm this is a <span style="color: red;">pre-MLP</span> phenomenon and not
 
 Gemma becomes steerable again, particularly at token 2 and token 4 in the middle layers. 
 
-Note: these are different models, so the activation function isn't the only variable. But the post-MLP control experiment strongly suggests the bottleneck is inside the MLP.
+Note: these are different models, so the activation function isn't the only variable. But the <span style="color: blue;">post-MLP</span> control experiment strongly suggests the bottleneck is inside the MLP.
 
 ### A closer look: where does the signal die?
 
-Pre-MLP steering has to propagate through the MLP's nonlinearity, while post-MLP steering bypasses it entirely. From [our paper](https://arxiv.org/abs/2603.00425), the output shift caused by pre-MLP steering is:
+<span style="color: red;">Pre-MLP</span> steering has to propagate through the MLP's nonlinearity, while <span style="color: blue;">post-MLP</span> steering bypasses it entirely. From [our paper](https://arxiv.org/abs/2603.00425), the output shift caused by <span style="color: red;">pre-MLP</span> steering is:
 
 $$
 \Delta \text{GLU}_{\text{steer}}(h) = 
@@ -131,7 +132,7 @@ where $$a_g = W_g h$$, $$a_u = W_u h$$, and $$\phi$$ is the activation function.
   <img src="{{ '/assets/img/pre_mlp_blog/phi_comparison_token2.png' | relative_url }}" alt="phi comparison" style="width:100%; height: auto;" />
 </div>
 
-The modulation terms have comparable magnitude in both models, so the activation function's effect on these terms alone doesn't explain Gemma's lack of steerability. The root cause likely involves other factors (LayerNorm behavior, weight matrix structure, or how $$W_g \Delta h$$ aligns with the active dimensions), and remains an open question. What we can say is that the bottleneck is inside the MLP: post-MLP steering bypasses it entirely and restores steerability.
+The modulation terms have comparable magnitude in both models, so the activation function's effect on these terms alone doesn't explain Gemma's lack of steerability. The root cause likely involves other factors (LayerNorm behavior, weight matrix structure, or how $$W_g \Delta h$$ aligns with the active dimensions), and remains an open question. What we can say is that the bottleneck is inside the MLP: <span style="color: blue;">post-MLP</span> steering bypasses it entirely and restores steerability.
 
 
 ## Where Does This Leave Us?
