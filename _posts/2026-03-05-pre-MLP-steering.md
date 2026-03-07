@@ -19,7 +19,7 @@ But that doesn't mean <span style="color: red;">pre-MLP</span> steering isn't in
 
 
 1. <span style="color: red;">Pre-MLP</span> steering has a strong connection with in-context learning (ICL).
-2. Different models show very different <span style="color: red;">pre-MLP</span> steerability — and the MLP's nonlinearity appears to play a role, though the full picture is still open.
+2. Different models show very different <span style="color: red;">pre-MLP</span> steerability — the bottleneck appears to be inside the MLP, though the full picture is still open.
 
 
 ## <span style="color: red;">Pre-MLP</span> steering formulation
@@ -93,7 +93,7 @@ Answer: The correct answer is (B) Jennifer.
   <img src="{{ '/assets/img/pre_mlp_blog/gemma_premlp.png' | relative_url }}" alt="Gemma pre-MLP" style="width:100%; height: auto;" />
 </div>
 
-**Notice the stark difference in steerability?** Especially on key tokens (like Token 2: A/B, Token 4: the answer string) Llama is steerable across many layers (and even more so on middle layers, aligned with the finding from one of the first steering papers [7]); while after layer 0, Gemma is practically unsteerable. 
+**Notice the stark difference in steerability?** Especially on key tokens (like Token 2: A/B, Token 4: the answer string) Llama is steerable across many layers, and even more so on middle layers, aligned with the finding from one of the first steering papers [7]; while after layer 0, Gemma is practically unsteerable. 
 
 To confirm this is a <span style="color: red;">pre-MLP</span> phenomenon and not a general property of Gemma, here is Gemma with <span style="color: blue;">post-MLP</span> steering:
 
@@ -126,20 +126,21 @@ Given a fixed steering vetor $$\Delta h$$, the output shift is modulated by two 
 1. $$\phi'(a_g) \odot a_u$$ in the gated path
 2. $$\phi(a_g)$$ in the un-gated path
 
-where $$a_g = W_g h$$, $$a_u = W_u h$$, and $$\phi$$ is the activation function. Our initial hypothesis was that GELU's sharper saturation (compared to SiLU) suppresses these modulation terms, killing the steering signal. However, when we plot the distributions of these terms for both models, it disproves this hypothesis:
+where $$a_g = W_g h$$, $$a_u = W_u h$$, and $$\phi$$ is the activation function. Our initial hypothesis was that GELU's sharper saturation (compared to SiLU) suppresses these modulation terms, killing the steering signal. However, when we plot the distributions of these terms for both models, they show comparable magnitudes:
 
 <div style="display: flex; justify-content: center; margin: 2rem 0;">
   <img src="{{ '/assets/img/pre_mlp_blog/phi_comparison_token2.png' | relative_url }}" alt="phi comparison" style="width:100%; height: auto;" />
 </div>
 
-The modulation terms have comparable magnitude in both models, so the activation function's effect on these terms alone doesn't explain Gemma's lack of steerability. The root cause likely involves other factors (LayerNorm behavior, weight matrix structure, or how $$W_g \Delta h$$ aligns with the active dimensions), and remains an open question. What we can say is that the bottleneck is inside the MLP: <span style="color: blue;">post-MLP</span> steering bypasses it entirely and restores steerability.
-
+So the activation function's effect on these modulation terms alone doesn't explain Gemma's lack of steerability. The root cause likely involves other factors (e.g., LayerNorm behavior, weight matrix structure, or how $W_g \Delta h$ aligns with the active dimensions), and remains an open question. What we can say is that the bottleneck is inside the MLP: <span style="color: blue;">post-MLP</span> steering bypasses it entirely and restores steerability.
 
 ## Where Does This Leave Us?
 
+Perhaps the most exciting takeaway is observation #1: the close relationship between ICL and pre-MLP steering. This tells us that pre-MLP steering is essentially compressing context into a vector, the question now becomes how best to capture $\Delta_A$, what parameterization to use, and whether we can extract it without training ([this paper](https://arxiv.org/abs/2510.08734)[8] explores the training-based alternative).
 
+On the steerability observation, it serves as a practical guide for designing steering methods: if we steer pre-MLP, there is something inside the MLP (which we haven't fully identified yet) that controls how the steering signal propagates. Post-MLP or post-block steering bypasses this bottleneck entirely, which is one more reason it might be preferable in practice.
 
-Note: the stuffs we discuss in this blog are conclusions drawn from a relatively limited set of experiments and analysis, not as rigorous as ones we did in the paper.
+Note: what we discuss in this blog are conclusions drawn from a relatively limited set of experiments and analysis, not as rigorous as those in the paper.
 
 ## References
 
@@ -156,3 +157,5 @@ Note: the stuffs we discuss in this blog are conclusions drawn from a relatively
 [6] Sakaguchi, Keisuke, et al. "Winogrande: An adversarial winograd schema challenge at scale." Communications of the ACM 64.9 (2021): 99-106.
 
 [7] Rimsky, Nina, et al. "Steering llama 2 via contrastive activation addition." Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2024.
+
+[8] Mazzawi, Hanna, et al. "Transmuting prompts into weights." arXiv preprint arXiv:2510.08734 (2025).
