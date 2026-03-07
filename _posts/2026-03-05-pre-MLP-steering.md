@@ -7,12 +7,12 @@ tags: [research]
 categories: [blog]
 ---
 
-Recently, we published [our paper](https://arxiv.org/abs/2603.00425) [1] on principled activation steering. If you haven't, I recommend checking it out! it is the PhD work I am most proud of :wink:. 
+Recently, we published [our paper](https://arxiv.org/abs/2603.00425) [1] on principled activation steering. If you haven't, I recommend checking it out! It is my favorite PhD work :wink:.
 
 We analyze three common steering site choices, <span style="color: red;">pre-MLP</span>, <span style="color: blue;">post-MLP</span>, and <span style="color: green;">post-block</span>, and found that <span style="color: green;">post-block</span> steering — after the residual connection is added back to the MLP output — is the theoretically backed, most expressive steering site. If your goal is replicating weight-based fine-tuning with orders of magnitude less parameters, <span style="color: green;">post-block</span> is the way to go.
 
 <div style="display: flex; justify-content: center; margin: 2rem 0;">
-  <img src="{{ '/assets/img/pre_mlp_blog/steering_sites.png' | relative_url }}" alt="Jintervention sites" style="width:60%; height: auto;" />
+  <img src="{{ '/assets/img/pre_mlp_blog/steering_sites.png' | relative_url }}" alt="Jintervention sites" style="width:50%; height: auto;" />
 </div>
 
 But that doesn't mean <span style="color: red;">pre-MLP</span> steering isn't interesting. In this blog we're going to discuss things we learned about <span style="color: red;">pre-MLP</span> steering during the project. Mainly:
@@ -27,11 +27,13 @@ First let's set up some notation and define what we mean by pre-MLP steering. Fo
 
 $$h \to h + \delta h$$. 
 
-Pre-MLP steering does this update on activations before the MLP. In our experiments we steer the output of attention, but there are works that steer specific attention heads like those in [2, 3, 4]. Note: we have only checked the derivation and experiments in this blog on pre-MLP steering like our formulation, we have not analyzed if the same math checks out for per-head steering.
+Pre-MLP steering does this update on activations before the MLP. In our experiments below we steer the output of attention, but there are works that steer specific attention heads like those in [2, 3, 4]. 
+
+Note: we have only checked the derivation and experiments in this blog on pre-MLP steering like our formulation, we have not analyzed if the same checks out for per-head steering.
 
 ## In-Context Learning and Pre-MLP Steering are closely related
 
-TLDR: **What ICL does implicitly — shifting attention outputs based on context — is what pre-MLP steering does explicitly**
+TLDR: <b style="color: #B509AC;">What ICL does implicitly — shifting attention outputs based on context — is what pre-MLP steering does explicitly</b>
 
 Consider a single Transformer block $$T$$ with an input $$h$$ (the residual stream, usually the output from the previous layer):
 
@@ -53,7 +55,7 @@ This is exactly pre-MLP steering with $$\delta h = \Delta_A$$. The attention mec
 
 ## On Activation Function's role in pre-MLP steering
 
-Early on, when we started experimenting with different intervention sites (pre-MLP, post-MLP, post-block), we stumbled upon something interesting: **a model's pre-MLP steerability is governed by its choice of activation function**. Our experiments suggest that models with SiLU are steerable across many layers, while models with GELU are only steerable at the very first layer.
+Early on, when we started experimenting with different intervention sites (pre-MLP, post-MLP, post-block), we stumbled upon something interesting: <b style="color: #B509AC;">a model's pre-MLP steerability is governed by its choice of activation function</b>. Our experiments suggest that models with SiLU are steerable across many layers, while models with GELU are only steerable at the very first layer.
 
 In the following figures, we perform pre-MLP steering on individual layers (x-axis) with varying steering strength $$\alpha$$, and measure how much steering moves the model toward a fine-tuned target. Specifically, the y-axis shows:
 
