@@ -138,7 +138,7 @@ So the activation function's effect on these modulation terms alone doesn't expl
 
 ## Where Does This Leave Us?
 
-Perhaps the most actionable takeaway is observation #1: the close relationship between ICL and pre-MLP steering. This tells us that pre-MLP steering is essentially compressing context into a vector — the question now becomes how best to capture $\Delta_A$ and what parameterization to use. [Mazzawi et al.](https://arxiv.org/abs/2510.08734) [8] explore this: they derive a training-free method to extract token-independent "thought vectors" (averaged $$\Delta_A$$) and "thought matrices" (low-rank weight updates) that compress a prompt's effect into reusable patches.
+Perhaps the most actionable takeaway is observation #1: the close relationship between ICL and pre-MLP steering. This tells us that pre-MLP steering is essentially compressing context into a vector — the question now becomes how best to capture $$\Delta_A$$ and what parameterization to use. [Mazzawi et al.](https://arxiv.org/abs/2510.08734) [8] explore this: they derive a training-free method to extract token-independent "thought vectors" (averaged $$\Delta_A$$) and "thought matrices" (low-rank weight updates) that compress a prompt's effect into reusable patches.
 
 On the steerability observation, it serves as a practical guide for designing steering methods: if we steer pre-MLP, there is something inside the MLP (which we haven't fully identified yet) that controls how the steering signal propagates. Post-MLP or post-block steering bypasses this bottleneck entirely, which is one more reason it might be preferable in practice.
 
