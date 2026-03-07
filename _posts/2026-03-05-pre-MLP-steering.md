@@ -54,7 +54,7 @@ $$h + \text{Attn}(C, h) = \underbrace{h + \text{Attn}(h)}_{\text{original MLP in
 
 This is exactly <span style="color: red;">pre-MLP</span> steering with $$\delta h = \Delta_A$$. The attention mechanism computes the steering vector for us: ICL *is* <span style="color: red;">pre-MLP</span> steering (when we set $$\delta h$$ to be $$\Delta_A$$), where the context determines the direction. This observation is straightforward, but there's a deeper result: Dherin et al. 2025 [5] showed this attention shift is equivalent to a rank-1 weight update to the MLP (highly recommend checking this paper out if you haven't, it's awesome).
 
-**Bottom line intuition**: If ICL is just an attention-mediated shift ($$\Delta_A$$), then <span style="color: red;">pre-MLP</span> steering is essentially "hardcoding" the influence of a prompt that isn't actually there.
+**Bottom line intuition**: If ICL is just an attention-mediated shift ($$\Delta_A$$), then <span style="color: red;">pre-MLP</span> steering is essentially hardcoding the effect of in-context examples without actually including them in the prompt.
 
 ## Why are some models harder to steer <span style="color: red;">pre-MLP</span>?
 
@@ -138,7 +138,7 @@ So the activation function's effect on these modulation terms alone doesn't expl
 
 ## Where Does This Leave Us?
 
-Perhaps the most actionable takeaway is observation #1: the close relationship between ICL and pre-MLP steering. This tells us that pre-MLP steering is essentially compressing context into a vector, the question now becomes how best to capture $$\Delta_A$$, what parameterization to use, and whether we can extract it without training ([Mazzawi et al.](https://arxiv.org/abs/2510.08734) [8] explore a training-based approach to extracting these steering vectors).
+Perhaps the most actionable takeaway is observation #1: the close relationship between ICL and pre-MLP steering. This tells us that pre-MLP steering is essentially compressing context into a vector — the question now becomes how best to capture $\Delta_A$ and what parameterization to use. [Mazzawi et al.](https://arxiv.org/abs/2510.08734) [8] explore this: they derive a training-free method to extract token-independent "thought vectors" (averaged $$\Delta_A$$) and "thought matrices" (low-rank weight updates) that compress a prompt's effect into reusable patches.
 
 On the steerability observation, it serves as a practical guide for designing steering methods: if we steer pre-MLP, there is something inside the MLP (which we haven't fully identified yet) that controls how the steering signal propagates. Post-MLP or post-block steering bypasses this bottleneck entirely, which is one more reason it might be preferable in practice.
 
