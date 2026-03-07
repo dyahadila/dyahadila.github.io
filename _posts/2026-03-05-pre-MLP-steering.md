@@ -121,17 +121,17 @@ W_d\Big[
 + O(\|\Delta h\|^2)
 $$
 
-Given a fixed steering $\Delta h$, the output shift is modulated by two input-dependent terms:
+Given a fixed steering vetor $$\Delta h$$, the output shift is modulated by two input-dependent terms:
 1. $$\phi'(a_g) \odot a_u$$ in the gated path
 2. $$\phi(a_g)$$ in the un-gated path
 
-where $$a_g = W_g h$$, $$a_u = W_u h$$, and $$\phi$$ is the activation function. Our initial hypothesis was that GELU's sharper saturation (compared to SiLU) suppresses these modulation terms, killing the steering signal. However, when we plot the distributions of these terms for both models, they look surprisingly similar:
+where $$a_g = W_g h$$, $$a_u = W_u h$$, and $$\phi$$ is the activation function. Our initial hypothesis was that GELU's sharper saturation (compared to SiLU) suppresses these modulation terms, killing the steering signal. However, when we plot the distributions of these terms for both models, it disproves this hypothesis:
 
 <div style="display: flex; justify-content: center; margin: 2rem 0;">
   <img src="{{ '/assets/img/pre_mlp_blog/phi_comparison_token2.png' | relative_url }}" alt="phi comparison" style="width:100%; height: auto;" />
 </div>
 
-The modulation terms have comparable magnitude in both models, so the activation function's effect on these terms alone doesn't explain Gemma's lack of steerability. The root cause likely involves other factors (LayerNorm behavior, weight matrix structure, or how $W_g \Delta h$ aligns with the active dimensions), and remains an open question. What we can say is that the bottleneck is inside the MLP: post-MLP steering bypasses it entirely and restores steerability.
+The modulation terms have comparable magnitude in both models, so the activation function's effect on these terms alone doesn't explain Gemma's lack of steerability. The root cause likely involves other factors (LayerNorm behavior, weight matrix structure, or how $$W_g \Delta h$$ aligns with the active dimensions), and remains an open question. What we can say is that the bottleneck is inside the MLP: post-MLP steering bypasses it entirely and restores steerability.
 
 
 ## Where Does This Leave Us?
