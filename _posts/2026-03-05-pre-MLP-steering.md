@@ -19,7 +19,7 @@ But that doesn't mean <span style="color: red;">pre-MLP</span> steering isn't in
 
 
 1. <span style="color: red;">Pre-MLP</span> steering has a strong connection with in-context learning (ICL).
-2. Different models show very different <span style="color: red;">pre-MLP</span> steerability — the bottleneck appears to be inside the MLP, though the full picture is still open.
+2. Different models show very different <span style="color: red;">pre-MLP</span> steerability. The bottleneck appears to be inside the MLP, though the full picture is still open.
 
 
 ## <span style="color: red;">Pre-MLP</span> steering formulation
@@ -136,11 +136,9 @@ So the activation function's effect on these modulation terms alone doesn't expl
 
 ## Where Does This Leave Us?
 
-Perhaps the most exciting takeaway is observation #1: the close relationship between ICL and pre-MLP steering. This tells us that pre-MLP steering is essentially compressing context into a vector, the question now becomes how best to capture $\Delta_A$, what parameterization to use, and whether we can extract it without training ([this paper](https://arxiv.org/abs/2510.08734)[8] explores the training-based alternative).
+Perhaps the most actionable takeaway is observation #1: the close relationship between ICL and pre-MLP steering. This tells us that pre-MLP steering is essentially compressing context into a vector, the question now becomes how best to capture $$\Delta_A$$, what parameterization to use, and whether we can extract it without training ([Mazzawi et al.](https://arxiv.org/abs/2510.08734) [8] explore a training-based approach to extracting these steering vectors).
 
 On the steerability observation, it serves as a practical guide for designing steering methods: if we steer pre-MLP, there is something inside the MLP (which we haven't fully identified yet) that controls how the steering signal propagates. Post-MLP or post-block steering bypasses this bottleneck entirely, which is one more reason it might be preferable in practice.
-
-Note: what we discuss in this blog are conclusions drawn from a relatively limited set of experiments and analysis, not as rigorous as those in the paper.
 
 ## References
 
