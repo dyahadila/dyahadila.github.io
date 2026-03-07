@@ -54,7 +54,7 @@ $$h + \text{Attn}(C, h) = \underbrace{h + \text{Attn}(h)}_{\text{original MLP in
 
 This is exactly <span style="color: red;">pre-MLP</span> steering with $$\delta h = \Delta_A$$. The attention mechanism computes the steering vector for us: ICL *is* <span style="color: red;">pre-MLP</span> steering (when we set $$\delta h$$ to be $$\Delta_A$$), where the context determines the direction. This observation is straightforward, but there's a deeper result: Dherin et al. 2025 [5] showed this attention shift is equivalent to a rank-1 weight update to the MLP (highly recommend checking this paper out if you haven't, it's awesome).
 
-**Bottom line intuition**: If ICL is just an attention-mediated shift ($$\Delta_A$$), then steering is essentially "hardcoding" the influence of a prompt that isn't actually there.
+**Bottom line intuition**: If ICL is just an attention-mediated shift ($$\Delta_A$$), then <span style="color: red;">pre-MLP</span> steering is essentially "hardcoding" the influence of a prompt that isn't actually there.
 
 ## Why are some models harder to steer <span style="color: red;">pre-MLP</span>?
 
