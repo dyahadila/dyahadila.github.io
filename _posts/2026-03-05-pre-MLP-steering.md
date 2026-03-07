@@ -80,35 +80,35 @@ Token 5:
 Answer: The correct answer is (B) Jennifer.
 ```
 
-### Llama (SiLU activation):
+### Llama <span style="color: red;">pre-MLP</span> steering (SiLU activation):
 
 <div style="display: flex; justify-content: center; margin: 2rem 0;">
   <img src="{{ '/assets/img/pre_mlp_blog/llama_premlp.png' | relative_url }}" alt="Llama pre-MLP" style="width:100%; height: auto;" />
 </div>
 
-### Gemma (GELU activation):
+### Gemma <span style="color: red;">pre-MLP</span> steering (GELU activation):
 
 <div style="display: flex; justify-content: center; margin: 2rem 0;">
   <img src="{{ '/assets/img/pre_mlp_blog/gemma_premlp.png' | relative_url }}" alt="Gemma pre-MLP" style="width:100%; height: auto;" />
 </div>
 
-**Notice the stark difference in steerability?** Especially on key tokens (like Token 2: A/B) Llama is steerable across many layers (and even more so on middle layers, aligned with the finding from one of the first steering papers [7]); while after layer 0, Gemma is practically unsteerable. 
+**Notice the stark difference in steerability?** Especially on key tokens (like Token 2: A/B, Token 4: the answer string) Llama is steerable across many layers (and even more so on middle layers, aligned with the finding from one of the first steering papers [7]); while after layer 0, Gemma is practically unsteerable. 
 
-To confirm this is a pre-MLP phenomenon and not a general property of Gemma, here is Gemma with post-MLP steering:
+To confirm this is a <span style="color: red;">pre-MLP</span> phenomenon and not a general property of Gemma, here is Gemma with <span style="color: blue;">post-MLP</span> steering:
 
-### Gemma (post-MLP steering)
+### Gemma <span style="color: blue;">post-MLP</span> steering
 
 <div style="display: flex; justify-content: center; margin: 2rem 0;">
   <img src="{{ '/assets/img/pre_mlp_blog/gemma_postmlp.png' | relative_url }}" alt="Gemma post-MLP" style="width:100%; height: auto;" />
 </div>
 
-Gemma becomes steerable again — particularly at token 2 and token 4 in the middle layers. 
+Gemma becomes steerable again, particularly at token 2 and token 4 in the middle layers. 
 
 Note: these are different models, so the activation function isn't the only variable, but the post-MLP control experiment strongly suggests it's the key factor.
 
 ### Why? A closer look into activation function
 
-Pre-MLP steering has to propagate through the MLP's nonlinearity, while post-MLP steering bypasses it entirely. From [our paper](https://arxiv.org/abs/2603.00425), the output shift caused by pre-MLP steering:
+Pre-MLP steering has to propagate through the MLP's nonlinearity, while post-MLP steering bypasses it entirely. From [our paper](https://arxiv.org/abs/2603.00425), the output shift caused by pre-MLP steering is:
 
 $$
 \Delta \text{GLU}_{\text{steer}}(h) = 
@@ -121,7 +121,11 @@ W_d\Big[
 + O(\|\Delta h\|^2)
 $$
 
-Notice that the shift caused by steering ($$\Delta \text{GLU}_{\text{steer}}$$)
+Given a fixed steering $$\Delta h$$, the output shift is modulated by two input-dependent terms:
+1. $$\phi'(a_g) \odot a_u$$ in the gated path
+2. $$\phi(a_g)$$ in the un-gated path
+
+where $$a_g = W_g h$$, $$a_u = W_u h$$, and $$\phi$$ is the activation function. When $$\phi'(a_g)$$ and $$\phi(a_g)$$
 
 
 ## Final Remarks
