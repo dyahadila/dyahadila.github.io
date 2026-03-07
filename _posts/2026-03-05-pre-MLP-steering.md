@@ -58,7 +58,7 @@ This is exactly <span style="color: red;">pre-MLP</span> steering with $$\delta 
 
 Early on, when we started experimenting with different intervention sites, we stumbled upon something interesting: <b style="color: #B509AC;">different models show very different <span style="color: red;">pre-MLP</span> steerability</b>. In our experiments, Llama (which uses SiLU) is steerable across many layers, while Gemma (which uses GELU) is practically unsteerable after layer 0 — and the MLP's nonlinearity appears to be involved.
 
-In the following figures, we perform <span style="color: red;">pre-MLP</span> steering on individual layers (x-axis) using the oracle steering vector $\delta h_{\text{oracle}} = h_{\text{finetuned}} - h_{\text{base}}$ — literally replacing the base model's activation with the fine-tuned model's activation at that layer. We scale this vector by a steering strength $\alpha$ and measure how much the steered model's output moves toward the fine-tuned target. Specifically, the y-axis shows:
+In the following figures, we perform <span style="color: red;">pre-MLP</span> steering on individual layers (x-axis) using the oracle steering vector $$\delta h_{\text{oracle}} = h_{\text{finetuned}} - h_{\text{base}}$$ — literally replacing the base model's activation with the fine-tuned model's activation at that layer. We scale this vector by a steering strength $\alpha$ and measure how much the steered model's output moves toward the fine-tuned target. Specifically, the y-axis shows:
 
 $$\Delta\text{KL} = \text{KL}(\text{steered} \| \text{finetuned}) - \text{KL}(\text{base} \| \text{finetuned})$$
 
