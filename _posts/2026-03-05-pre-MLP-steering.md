@@ -150,7 +150,7 @@ A successful implementation of $$\Delta_A$$ extraction could enable this kind of
 
 On the steerability observation, it serves as a practical guide for designing steering methods: if we steer <span style="color: red;">pre-MLP</span>, there is something inside the MLP (which we haven't fully identified yet) that controls how the steering signal propagates. <span style="color: blue;">Post-MLP</span> or <span style="color: green;">post-block</span> steering bypasses this bottleneck entirely.
 
-One possible direction: if pre-MLP steering and ICL share the same mechanism, does Gemma's pre-MLP bottleneck also affect its in-context learning? This would tie our two observations together and suggest that MLP design has implications beyond steering, potentially affecting how models learn from context at inference time. Taken further, this means activation function and MLP architecture could be a deliberate design knob for controlling steerability. A model that's harder to steer pre-MLP might also be more robust to manipulation via adversarial prompts, since those operate through the same attention $$\rightarrow$$ MLP pathway.
+One possible direction: *if pre-MLP steering and ICL share the same mechanism, does a model's pre-MLP bottleneck also affect its in-context learning?* Taken further, this means activation function and MLP architecture could be a deliberate design knob for controlling steerability. A model that's harder to steer pre-MLP might also be more robust to manipulation via adversarial prompts, since those operate through the same attention $$\rightarrow$$ MLP pathway.
 
 Note: what we discuss in this blog are conclusions drawn from a relatively limited set of experiments and analysis, not as rigorous as those in the paper.
 
