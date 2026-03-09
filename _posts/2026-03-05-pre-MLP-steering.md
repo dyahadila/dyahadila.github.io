@@ -146,7 +146,7 @@ This is the kind of problem that's already showing up in practice. Here's Claude
   <img src="{{ '/assets/img/pre_mlp_blog/claude.jpeg' | relative_url }}" alt="claude" style="width:100%; height: auto;" />
 </div>
 
-A successful implementation of $$\Delta_A$$ extraction could enable this kind of context compression while preserving key information. [Mazzawi et al.](https://arxiv.org/abs/2510.08734) [8] take a step in this direction: they derive a training-free method to extract token-independent "thought vectors" (averaged $$\Delta_A$$) and "thought matrices" (low-rank weight updates) that compress a prompt's effect into reusable patches, though so far this has only been demonstrated on simple tasks with short contexts.
+A successful implementation of $$\Delta_A$$ extraction could enable this kind of context compression while preserving key information. [Mazzawi et al.](https://arxiv.org/abs/2510.08734) [8] and [Li et al.](https://arxiv.org/pdf/2405.14660)[9] take a step in this diretion on simple tasks with short contexts.
 
 On the steerability observation, it serves as a practical guide for designing steering methods: if we steer <span style="color: red;">pre-MLP</span>, there is something inside the MLP (which we haven't fully identified yet) that controls how the steering signal propagates. <span style="color: blue;">Post-MLP</span> or <span style="color: green;">post-block</span> steering bypasses this bottleneck entirely.
 
@@ -171,3 +171,5 @@ Note: what we discuss in this blog are conclusions drawn from a relatively limit
 [7] Rimsky, Nina, et al. "Steering llama 2 via contrastive activation addition." Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2024.
 
 [8] Mazzawi, Hanna, et al. "Transmuting prompts into weights." arXiv preprint arXiv:2510.08734 (2025).
+
+[9] Li, Zhuowei, et al. "Implicit in-context learning." arXiv preprint arXiv:2405.14660 (2024).
