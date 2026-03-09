@@ -134,13 +134,25 @@ where $$a_g = W_g h$$, $$a_u = W_u h$$, and $$\phi$$ is the activation function.
   <img src="{{ '/assets/img/pre_mlp_blog/phi_comparison_token2.png' | relative_url }}" alt="phi comparison" style="width:100%; height: auto;" />
 </div>
 
-So the activation function's effect on these modulation terms alone doesn't explain Gemma's lack of steerability. The root cause likely involves other factors (e.g., LayerNorm behavior, weight matrix structure, or how $W_g \Delta h$ aligns with the active dimensions), and remains an open question. What we can say is that the bottleneck is inside the MLP: <span style="color: blue;">post-MLP</span> steering bypasses it entirely and restores steerability.
+So the activation function's effect on these modulation terms alone doesn't explain Gemma's lack of steerability. The root cause likely involves other factors (e.g., LayerNorm behavior, weight matrix structure, or how $$W_g \Delta h$$ and $$W_u \Delta h$$ align with the active dimensions), and remains an open question. What we can say is that the bottleneck is inside the MLP: <span style="color: blue;">post-MLP</span> steering bypasses it entirely and restores steerability.
 
 ## Where Does This Leave Us?
 
-Perhaps the most actionable takeaway is observation #1: the close relationship between ICL and pre-MLP steering. This tells us that pre-MLP steering is essentially compressing context into a vector — the question now becomes how best to capture $$\Delta_A$$ and what parameterization to use. [Mazzawi et al.](https://arxiv.org/abs/2510.08734) [8] explore this: they derive a training-free method to extract token-independent "thought vectors" (averaged $$\Delta_A$$) and "thought matrices" (low-rank weight updates) that compress a prompt's effect into reusable patches.
+Perhaps the most actionable takeaway is observation #1: the close relationship between ICL and pre-MLP steering. This tells us that pre-MLP steering is essentially compressing context into a vector — the question now becomes *how best to capture $$\Delta_A$$ and what parameterization to use.*
 
-On the steerability observation, it serves as a practical guide for designing steering methods: if we steer pre-MLP, there is something inside the MLP (which we haven't fully identified yet) that controls how the steering signal propagates. Post-MLP or post-block steering bypasses this bottleneck entirely, which is one more reason it might be preferable in practice.
+This is the kind of problem that's already showing up in practice. Here's Claude compacting a long conversation to stay within context limits:
+
+<div style="display: flex; justify-content: center; margin: 2rem 0;">
+  <img src="{{ '/assets/img/pre_mlp_blog/claude.jpeg' | relative_url }}" alt="claude" style="width:100%; height: auto;" />
+</div>
+
+A successful implementation of $$\Delta_A$$ extraction could enable this kind of context compression while preserving key information. [Mazzawi et al.](https://arxiv.org/abs/2510.08734) [8] take a step in this direction: they derive a training-free method to extract token-independent "thought vectors" (averaged $$\Delta_A$$) and "thought matrices" (low-rank weight updates) that compress a prompt's effect into reusable patches, though so far this has only been demonstrated on simple tasks with short contexts.
+
+On the steerability observation, it serves as a practical guide for designing steering methods: if we steer <span style="color: red;">pre-MLP</span>, there is something inside the MLP (which we haven't fully identified yet) that controls how the steering signal propagates. <span style="color: blue;">Post-MLP</span> or <span style="color: green;">post-block</span> steering bypasses this bottleneck entirely.
+
+One possible direction: if pre-MLP steering and ICL share the same mechanism, does Gemma's pre-MLP bottleneck also affect its in-context learning? This would tie our two observations together and suggest that MLP design has implications beyond steering, potentially affecting how models learn from context at inference time. Taken further, this means activation function and MLP architecture could be a deliberate design knob for controlling steerability. A model that's harder to steer pre-MLP might also be more robust to manipulation via adversarial prompts, since those operate through the same attention $$\rightarrow$$ MLP pathway.
+
+Note: what we discuss in this blog are conclusions drawn from a relatively limited set of experiments and analysis, not as rigorous as those in the paper.
 
 ## References
 
