@@ -21,7 +21,6 @@ social: true  # includes social icons at the bottom of the page
 
 Hello! I am a final-year PhD student advised by [Fred Sala](https://pages.cs.wisc.edu/~fredsala/) in the [Sprocket Lab](https://sprocketlab.github.io/). I’ve been fortunate to intern at Google Research and AWS AI Labs.
 
-**Research Interest.**
 I like understanding why things work (or don't) inside LLMs, and turning those insights into efficient and reliable methods for adapting them.
 
 I will be joining [Scaled Cognition](https://www.scaledcognition.com/team) as a research scientist in June 2026 :blush:
