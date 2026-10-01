@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: adila@wisc.edu
+subtitle: dyhadila85@gmail.com
 
 # Comment out the profile section
 # profile:
@@ -19,11 +19,9 @@ social: true  # includes social icons at the bottom of the page
   <img src="/assets/img/prof_pic.jpg" alt="Profile Picture" width="200px">
 </div>
 
-Hello! I am a final-year PhD student advised by [Fred Sala](https://pages.cs.wisc.edu/~fredsala/) in the [Sprocket Lab](https://sprocketlab.github.io/). I’ve been fortunate to intern at Google Research and AWS AI Labs.
+Hello! I am a Research Scientist at [Scaled Cognition](https://www.scaledcognition.com/team). I completed my PhD at UW-Madison with [Fred Sala](https://pages.cs.wisc.edu/~fredsala/), and interned at Google Research and AWS AI Labs.
 
 I like understanding why things work (or don't) inside LLMs, and turning those insights into efficient and reliable methods for adapting them.
-
-I will be joining [Scaled Cognition](https://www.scaledcognition.com/team) as a research scientist in June 2026 :blush:
 
 
 <p style="font-size: 1.15em; font-weight: 600; margin-top: 1.5rem;">
